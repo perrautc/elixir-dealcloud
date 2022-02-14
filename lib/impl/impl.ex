@@ -10,7 +10,7 @@ defmodule Dealcloud.Impl do
           config: Dealcloud.Auth,
           params: %{},
           body: List.t() | %{},
-          data: List.t()
+          data: List.t(),
         }
   def get(id, config) when is_integer(id), do: get(%{}, config)
 
@@ -53,7 +53,7 @@ defmodule Dealcloud.Impl do
 
   def make_request(
         p = %{config: config, requestType: requestType, url: url, body: body, params: params},
-        dataProcessor
+        dataProcessor \\ &process_data/2
       ) do
     case HTTPoison.request(
            requestType,
@@ -90,4 +90,6 @@ defmodule Dealcloud.Impl do
         response
     end
   end
+  def process_data(body, _p), do: body
+  def url(parts), do: Enum.join(parts, "/")
 end

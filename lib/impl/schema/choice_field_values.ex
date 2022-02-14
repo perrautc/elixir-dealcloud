@@ -1,11 +1,7 @@
 defmodule Dealcloud.Impl.Schema.ChoiceFieldValues do
   @name "choiceFieldValues"
+  alias Dealcloud.Impl.Schema
 
-  def post(fieldId, body, config = %Dealcloud.Auth{}) do
-    Dealcloud.Impl.post(body, config)
-    |> Dealcloud.Impl.Schema.url("/#{fieldId}", @name)
-    |> Dealcloud.Impl.make_request(&process_data/2)
-  end
+  def post(fieldId, body, config), do: ["#{fieldId}",@name] |> Schema.post(body, config)
 
-  defp process_data(body, _p), do: body
 end

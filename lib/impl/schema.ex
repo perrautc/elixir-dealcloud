@@ -1,4 +1,5 @@
 defmodule Dealcloud.Impl.Schema do
+  alias Dealcloud.Impl
   @moduledoc """
   Management contains all of the apis needed to work with users
 
@@ -13,26 +14,21 @@ defmodule Dealcloud.Impl.Schema do
   8. Create proxy assignments
   """
 
-  def url(p = %{config: config}, name) do
-    %{p | url: "#{config.site}/#{config.schema_url}/#{name}"}
+  def get(paths, config) do
+        %Dealcloud.Impl{
+      requestType: :get,
+      params: %{},
+      config: config,
+      url:  [config.site, config.schema_url] ++ paths |> Impl.url
+    } |> Impl.make_request(&Impl.process_data/2)
   end
-
-  def url(p, extra, name) do
-    p = url(p, name)
-    %{p | url: p.url <> extra}
-  end
-
-  defp process_data(body, _p), do: body
-
-  def get(config, name) do
-    Dealcloud.Impl.get(1, config)
-    |> Dealcloud.Impl.Schema.url(name)
-    |> Dealcloud.Impl.make_request(&process_data/2)
-  end
-
-  def get(config, extra, name) do
-    Dealcloud.Impl.get(1, config)
-    |> Dealcloud.Impl.Schema.url(extra, name)
-    |> Dealcloud.Impl.make_request(&process_data/2)
+  def post(paths, body, config) do
+    %Dealcloud.Impl{
+      requestType: :post,
+      params: %{},
+      body: body,
+      config: config,
+      url:  [config.site, config.schema_url] ++ paths |> Impl.url
+    } |> Impl.make_request(&Impl.process_data/2)
   end
 end
