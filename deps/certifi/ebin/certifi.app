@@ -4,7 +4,7 @@
               {registered,[]},
               {applications,[kernel,stdlib]},
               {env,[]},
-              {modules,[certifi,certifi_pt]},
+              {modules,['certifi 2',certifi,'certifi_pt 2',certifi_pt]},
               {licenses,["BSD"]},
               {links,[{"Github","https://github.com/certifi/erlang-certifi"}]},
               {files,["src","priv","test","rebar.config","README.md",

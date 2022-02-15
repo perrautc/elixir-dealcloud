@@ -6,5 +6,5 @@ defmodule Dealcloud.Management.ProxyQuery do
           pageNumber: integer,
           pageSize: integer
         }
-  defstruct proxyQuery: nil, userQuery: nil, searchByName: false, pageNumber: 1, pageSize: nil
+  defstruct proxyQuery: nil, userQuery: nil, searchByName: false, pageNumber: 1, pageSize: 100
 end

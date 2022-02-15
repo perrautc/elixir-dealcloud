@@ -9,6 +9,6 @@ defmodule Dealcloud.Impl.Schema.Fields do
   def get(fields, config) do
     query = fields |> Enum.join("&fieldIds=")
 
-    Schema.get([@name <> "?fieldids=#{query}"], config)
+    Schema.get([@name], %{"fieldIds" => query}, config)
   end
 end

@@ -22,6 +22,14 @@ defmodule Dealcloud.Impl.Schema do
       url:  [config.site, config.schema_url] ++ paths |> Impl.url
     } |> Impl.make_request(&Impl.process_data/2)
   end
+    def get(paths, params, config) do
+        %Dealcloud.Impl{
+      requestType: :get,
+      params: params,
+      config: config,
+      url:  [config.site, config.schema_url] ++ paths |> Impl.url
+    } |> Impl.make_request(&Impl.process_data/2)
+  end
   def post(paths, body, config) do
     %Dealcloud.Impl{
       requestType: :post,
