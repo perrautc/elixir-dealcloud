@@ -1,67 +1,46 @@
 defmodule Dealcloud.Impl.Data.EntryData do
+  alias Dealcloud.Impl.Data
+  @name "entrydata"
   @moduledoc """
-  EntryData contains the API to get entries as cells
+  EntryTypes contains all apis needed to work with entries in Dealcloud, using the cells API
+
+  With these APIs you are able to:
+  1. Create Entries
+  2. Update Entries
+  3. Delete Entries
+  4. Get Entries
+  5. Filter Entries
+  6. Get Modified Entries
+  7. Get Historical Data for a entry
   """
-  def get(entries, params, config) do
-    entries
-    |> create_batches()
-    |> Enum.map(fn v ->
-      call_batches(v, params, config)
-    end)
-    |> Enum.reduce([], fn x, acc -> acc ++ x end)
-    |> Enum.group_by(fn x -> x["entryId"] end)
-
-    # Combine Data and Flatten
+  def url(p, name) do
+    Dealcloud.Impl.Data.url(p) |> (&%{&1 | url: &1.url <> "/entrydata/#{name}"}).()
   end
 
-  def get(entryIds, fieldIds, params, config) do
-    generate_entries_fields(entryIds, fieldIds)
-    |> get(params, config)
+  def url(p, extra, name) do
+    url(p, name) |> (&%{&1 | url: &1.url <> extra}).()
   end
 
-  def get_all_fields(entryType, entryIds, params, config) do
-    fieldIds =
-      Dealcloud.Impl.Schema.EntryTypes.fields(entryType, config)
-      |> Enum.map(fn x -> x["id"] end)
+  @spec get_entries(integer, Dealcloud.Auth.t()) :: any
+  def get_entries(type, config), do: [@name, type, "entries"] |> Data.get(%{}, config)
 
-    generate_entries_fields(entryIds, fieldIds)
-    |> get(params, config)
-  end
+  def get_entries_ids(entryType, config),
+    do: get_entries(entryType, config) |> Enum.map(fn %{"id" => id} -> id end)
 
-  def get_all_entries(entryType, params, config) do
-    entryIds =
-      Dealcloud.Impl.Data.EntryType.get_entries(entryType, config)
-      |> Enum.map(fn x -> x["id"] end)
+  @spec get_modified_entries(any, Dealcloud.Query.t(), Dealcloud.Auth.t()) :: any
+  def get_modified_entries(type, params, config),
+    do: [@name, type, "entries", "history"] |> Data.get(params, config)
 
-    get_all_fields(entryType, entryIds, params, config)
-  end
+  @spec filter_entries(any, Dealcloud.Data.Filter.t(), Dealcloud.Auth.t()) :: any
+  def filter_entries(type, body, config),
+    do: [@name, type, "filter"] |> Data.post(body, %{}, config)
 
-  def get_all_entries(entryType, fieldIds, params, config) do
-    entryIds =
-      Dealcloud.Impl.Data.EntryType.get_entries(entryType, config)
-      |> Enum.map(fn %{"id" => x} -> x end)
+  def post(type, entries, config),
+    do: [@name, type] |> Data.post(%{"storeRequests" => entries}, %{}, config)
 
-    generate_entries_fields(entryIds, fieldIds)
-    |> get(params, config)
-  end
+  def put(type, entries, config),
+    do: [@name, type] |> Data.put(%{"storeRequests" => entries}, %{}, config)
 
-  def generate_entries_fields(entriesIds, fieldIds) do
-    for e <- entriesIds, f <- fieldIds, do: %Dealcloud.Data.Record{entryId: e, fieldId: f}
-  end
-
-  def generate_entries_fields(entriesIds, fieldIds, recordType) do
-    for e <- entriesIds, f <- fieldIds, do: %{recordType | entryId: e, fieldId: f}
-  end
-
-  defp call_batches(entries, params, config) do
-    Dealcloud.Impl.post(entries, params, config)
-    |> Dealcloud.Impl.Data.EntryType.url("get")
-    |> Dealcloud.Impl.make_request(&process_data/2)
-  end
-
-  defp process_data(body, _p), do: body
-
-  def create_batches(entries, batch_size \\ 10_000) do
-    entries |> Enum.chunk_every(batch_size)
-  end
+  def get(entries, params, config),
+    do: [@name, "get"] |> Data.post(entries, params, config)
 end

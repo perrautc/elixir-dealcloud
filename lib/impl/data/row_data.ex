@@ -1,54 +1,17 @@
 defmodule Dealcloud.Impl.Data.RowData do
+  alias Dealcloud.Impl.Data
   @name "rows"
   @spec get(any, Dealcloud.Data.Query.t(), Dealcloud.Auth.t()) :: any
-  def get(type, params, config) do
-    Dealcloud.Impl.get(params, config)
-    |> url(type)
-    |> Dealcloud.Impl.make_request(&process_data/2)
-  end
+  def get(type, params, config), do: ["entrydata", @name, type] |> Data.get(params, config)
 
-  def patch(type, body, config) do
-    Dealcloud.Impl.patch(body, config)
-    |> url(type)
-    |> Dealcloud.Impl.make_request(&process_data/2)
-  end
+  def patch(type, body, config),
+    do: ["entrydata", @name, type] |> Data.patch(body, %{}, config)
 
-  def put(type, body, config) do
-    Dealcloud.Impl.put(body, config)
-    |> url(type)
-    |> Dealcloud.Impl.make_request(&process_data/2)
-  end
+  def put(type, body, config), do: ["entrydata", @name, type] |> Data.put(body, %{}, config)
 
-  def post(type, body, config) do
-    Dealcloud.Impl.post(body, config)
-    |> url(type)
-    |> Dealcloud.Impl.make_request(&process_data/2)
-  end
+  def post(type, body, config), do: ["entrydata", @name, type] |> Data.post(body, %{}, config)
 
   @spec query(any, Dealcloud.Data.PostQuery.t(), Dealcloud.Auth.t()) :: any
-  def query(type, body, config) do
-    Dealcloud.Impl.post(body, config)
-    |> url(type, "query")
-    |> Dealcloud.Impl.make_request(&process_data/2)
-  end
-
-  defp url(p, type),
-    do: Map.put(p, :url, "#{p.config.site}/#{p.config.data_url}/entrydata/#{@name}/#{type}")
-
-  defp url(p, type, extra),
-    do:
-      Map.put(
-        p,
-        :url,
-        "#{p.config.site}/#{p.config.data_url}/entrydata/#{@name}/#{extra}/#{type}"
-      )
-
-  defp process_data(%{"rows" => rows}, p) when rows == [], do: p.data
-
-  defp process_data(%{"rows" => rows}, p = %{data: data, params: params}) do
-    %{p | params: %{params | skip: p.params.skip + params.limit}, data: data ++ rows}
-    |> Dealcloud.Impl.make_request(&process_data/2)
-  end
-
-  defp process_data(body, _p), do: body
+  def query(type, body, config),
+    do: ["entrydata", @name, "query", type] |> Data.post(body, %{}, config)
 end

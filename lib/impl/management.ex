@@ -14,14 +14,6 @@ defmodule Dealcloud.Impl.Management do
   7. Get proxy assignments
   8. Create proxy assignments
   """
-  def url(p = %{config: config}, name) do
-    %{p | url: "#{config.site}/#{config.user_url}/#{name}"}
-  end
-
-  def url(p, extra, name) do
-    p = url(p, name)
-    %{p | url: p.url <> extra}
-  end
 
   def get(paths, params, config, dataProcessor \\ &process_data/2) do
     %Dealcloud.Impl{
@@ -39,7 +31,7 @@ defmodule Dealcloud.Impl.Management do
       params: params,
       body: body,
       config: config,
-      url: ([config.site, config.schema_url] ++ paths) |> Impl.url()
+      url: ([config.site, config.user_url] ++ paths) |> Impl.url()
     }
     |> Impl.make_request(dataProcessor)
   end
@@ -50,7 +42,7 @@ defmodule Dealcloud.Impl.Management do
       params: params,
       body: body,
       config: config,
-      url: ([config.site, config.schema_url] ++ paths) |> Impl.url()
+      url: ([config.site, config.user_url] ++ paths) |> Impl.url()
     }
     |> Impl.make_request(dataProcessor)
   end
@@ -61,7 +53,7 @@ defmodule Dealcloud.Impl.Management do
       params: %{},
       body: nil,
       config: config,
-      url: ([config.site, config.schema_url] ++ paths) |> Impl.url()
+      url: ([config.site, config.user_url] ++ paths) |> Impl.url()
     }
     |> Impl.make_request(dataProcessor)
   end

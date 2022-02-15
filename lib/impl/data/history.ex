@@ -1,11 +1,5 @@
 defmodule Dealcloud.Impl.Data.History do
+  alias Dealcloud.Impl.Data
   @name "getHistoricalData"
-  def get(body, params, config) do
-    Dealcloud.Impl.post(body, params, config)
-    |> Dealcloud.Impl.Data.url()
-    |> (&%{&1 | url: &1.url <> "/" <> "#{@name}"}).()
-    |> Dealcloud.Impl.make_request(&process_data/2)
-  end
-
-  defp process_data(body, _p), do: body
+  def get(body, params, config), do: ["entrydata", @name] |> Data.get(body, params, config)
 end

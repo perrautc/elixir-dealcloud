@@ -1,4 +1,6 @@
 defmodule Dealcloud.Impl.Data.Merge do
+  alias Dealcloud.Impl.Data
+  @name "merge"
   @moduledoc """
   This contains the functions for merging 2 or more entries.
   You're able to perform up to 100 mergest per call
@@ -17,13 +19,6 @@ defmodule Dealcloud.Impl.Data.Merge do
   """
   @spec post(integer, [Dealcloud.Data.Merge.t()], Dealcloud.Data.Query.t(), Dealcloud.Auth.t()) ::
           :ok
-  def post(type, mergeRequest, query, config) do
-    Dealcloud.Impl.post(mergeRequest, query, config)
-    |> Dealcloud.Impl.Data.url()
-    |> url(type)
-    |> Dealcloud.Impl.make_request(&process_data/2)
-  end
-
-  def url(p, name), do: %{p | url: p.url <> "/merge/#{name}"}
-  defp process_data(body, _p), do: body
+  def post(type, mergeRequest, query, config),
+    do: [@name, type] |> Data.post(mergeRequest, query, config)
 end
