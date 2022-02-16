@@ -1,13 +1,11 @@
 {application,dealcloud,
              [{applications,[kernel,stdlib,elixir,logger,httpoison,hackney,
-                             poison,json]},
+                             poison,json,inch_ex]},
               {description,"dealcloud"},
               {modules,['Elixir.Dealcloud','Elixir.Dealcloud.Auth',
                         'Elixir.Dealcloud.Data',
-                        'Elixir.Dealcloud.Data.Entries',
-                        'Elixir.Dealcloud.Data.EntryData',
                         'Elixir.Dealcloud.Data.Filter',
-                        'Elixir.Dealcloud.Data.Merge',
+                        'Elixir.Dealcloud.Data.MergeRequest',
                         'Elixir.Dealcloud.Data.PostQuery',
                         'Elixir.Dealcloud.Data.Query',
                         'Elixir.Dealcloud.Data.Record',
@@ -48,4 +46,4 @@
                         'Elixir.Dealcloud.Schema',
                         'Elixir.Dealcloud.Schema.SystemEntryTypes']},
               {registered,[]},
-              {vsn,"0.1.0"}]}.
+              {vsn,"0.2.0"}]}.

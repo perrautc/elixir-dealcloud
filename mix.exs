@@ -25,6 +25,8 @@ defmodule Dealcloud.MixProject do
       {:hackney, "~> 1.18"},
       {:poison, "~> 5.0"},
       {:json, "~> 1.4"},
+      {:ex_doc, "~> 0.27", only: :dev, runtime: false},
+      {:inch_ex, "~> 2.0"},
       {:exvcr, "~> 0.11", only: :test}
     ]
   end

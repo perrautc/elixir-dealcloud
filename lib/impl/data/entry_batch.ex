@@ -12,8 +12,6 @@ defmodule Dealcloud.Impl.Data.EntryBatch do
     end)
     |> Enum.reduce([], fn x, acc -> acc ++ x end)
     |> Enum.group_by(fn x -> x["entryId"] end)
-
-    # Combine Data and Flatten
   end
 
   def get(entryIds, fieldIds, params, config) do
@@ -32,7 +30,7 @@ defmodule Dealcloud.Impl.Data.EntryBatch do
 
   def get_all_entries(entryType, params, config) do
     entryIds =
-      Dealcloud.Impl.Data.EntryType.get_entries(entryType, config)
+      Dealcloud.Impl.Data.EntryData.get_entries(entryType, config)
       |> Enum.map(fn x -> x["id"] end)
 
     get_all_fields(entryType, entryIds, params, config)
@@ -40,7 +38,7 @@ defmodule Dealcloud.Impl.Data.EntryBatch do
 
   def get_all_entries(entryType, fieldIds, params, config) do
     entryIds =
-      Dealcloud.Impl.Data.EntryType.get_entries(entryType, config)
+      Dealcloud.Impl.Data.EntryData.get_entries(entryType, config)
       |> Enum.map(fn %{"id" => x} -> x end)
 
     generate_entries_fields(entryIds, fieldIds)

@@ -17,8 +17,8 @@ defmodule Dealcloud.Impl.Data.Merge do
       iex> Merge.post(2014,[mergeRequest], %Dealcloud.Data.Query{overwriteEmptyValues: true}, %Auth{})
   :ok
   """
-  @spec post(integer, [Dealcloud.Data.Merge.t()], Dealcloud.Data.Query.t(), Dealcloud.Auth.t()) ::
+  @spec post(integer, [Dealcloud.Data.Merge.t()], Dealcloud.Auth.t()) ::
           :ok
-  def post(type, mergeRequest, query, config),
-    do: [@name, type] |> Data.post(mergeRequest, query, config)
+  def post(type, mergeRequest, config),
+    do: [@name, type] |> Data.post(mergeRequest, %{}, config)
 end

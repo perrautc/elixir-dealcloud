@@ -1,3 +1,9 @@
+## Aliases
+alias Dealcloud.Schema
+alias Dealcloud.Data
+alias Dealcloud.Management
+
+################################
 qa = %Dealcloud.Auth{
   site: "https://qamc2-amclient.dealclouddev.com",
   client_id: "1003660",

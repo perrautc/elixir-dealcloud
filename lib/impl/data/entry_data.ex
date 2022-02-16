@@ -13,13 +13,6 @@ defmodule Dealcloud.Impl.Data.EntryData do
   6. Get Modified Entries
   7. Get Historical Data for a entry
   """
-  def url(p, name) do
-    Dealcloud.Impl.Data.url(p) |> (&%{&1 | url: &1.url <> "/entrydata/#{name}"}).()
-  end
-
-  def url(p, extra, name) do
-    url(p, name) |> (&%{&1 | url: &1.url <> extra}).()
-  end
 
   @spec get_entries(integer, Dealcloud.Auth.t()) :: any
   def get_entries(type, config), do: [@name, type, "entries"] |> Data.get(%{}, config)
