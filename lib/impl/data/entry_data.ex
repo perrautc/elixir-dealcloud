@@ -20,7 +20,7 @@ defmodule Dealcloud.Impl.Data.EntryData do
   def get_entries_ids(entryType, config),
     do: get_entries(entryType, config) |> Enum.map(fn %{"id" => id} -> id end)
 
-  @spec get_modified_entries(any, Dealcloud.Query.t(), Dealcloud.Auth.t()) :: any
+  @spec get_modified_entries(any, Dealcloud.Data.ModifiedQuery.t(), Dealcloud.Auth.t()) :: any
   def get_modified_entries(type, params, config),
     do: [@name, type, "entries", "history"] |> Data.get(params, config)
 

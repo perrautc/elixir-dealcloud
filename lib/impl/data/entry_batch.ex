@@ -8,7 +8,7 @@ defmodule Dealcloud.Impl.Data.EntryBatch do
     entries
     |> create_batches()
     |> Enum.map(fn v ->
-      EntryData.post(v, params, config)
+      v |> EntryData.get(params, config)
     end)
     |> Enum.reduce([], fn x, acc -> acc ++ x end)
     |> Enum.group_by(fn x -> x["entryId"] end)

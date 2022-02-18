@@ -24,6 +24,10 @@ defmodule Dealcloud.Data do
     to: Dealcloud.Impl.Data.EntryData,
     as: :get
 
+  defdelegate get_cells_entries_batch(entries, params, config),
+    to: Dealcloud.Impl.Data.EntryBatch,
+    as: :get
+
   defdelegate create_cells_entries(type, entries, config),
     to: Dealcloud.Impl.Data.EntryData,
     as: :post
