@@ -15,3 +15,12 @@ prod = %Dealcloud.Auth{
   client_id: "8278",
   client_secret: "q61Wkm4XPU3cgt0s8_Zeb4ORqr0ZmIYnyI1-wBOgWVo1"
 }
+
+test = [
+  %{"entryId" => 1, "fieldId" => 1},
+  %{"entryId" => 2, "fieldId" => 2},
+  %{"entryId" => 2, "fieldId" => 1},
+  %{"entryId" => 1, "fieldId" => 2},
+  %{"entryId" => 3, "fieldId" => 1},
+  %{"entryId" => 3, "fieldId" => 2}
+]
