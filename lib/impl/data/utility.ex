@@ -1,4 +1,4 @@
-defmodule Dealcloud.Impl.Data.EntryBatch do
+defmodule Dealcloud.Impl.Data.Utility do
   alias Dealcloud.Impl.Data.EntryData
 
   @moduledoc """
@@ -19,30 +19,32 @@ defmodule Dealcloud.Impl.Data.EntryBatch do
     |> get(params, config)
   end
 
-  def get_all_fields(entryType, entryIds, params, config) do
+  def all_fields(entryType, entryIds, config) do
     fieldIds =
       Dealcloud.Impl.Schema.EntryTypes.fields(entryType, config)
       |> Enum.map(fn x -> x["id"] end)
 
     generate_entries_fields(entryIds, fieldIds)
-    |> get(params, config)
   end
 
-  def get_all_entries(entryType, params, config) do
+  def all_entries(entryType, config) do
     entryIds =
       Dealcloud.Impl.Data.EntryData.get_entries(entryType, config)
       |> Enum.map(fn x -> x["id"] end)
 
-    get_all_fields(entryType, entryIds, params, config)
+    fieldIds =
+      Dealcloud.Impl.Schema.EntryTypes.fields(entryType, config)
+      |> Enum.map(fn x -> x["id"] end)
+
+    generate_entries_fields(entryIds, fieldIds)
   end
 
-  def get_all_entries(entryType, fieldIds, params, config) do
+  def all_entries(entryType, fieldIds, config) do
     entryIds =
       Dealcloud.Impl.Data.EntryData.get_entries(entryType, config)
       |> Enum.map(fn %{"id" => x} -> x end)
 
     generate_entries_fields(entryIds, fieldIds)
-    |> get(params, config)
   end
 
   def generate_entries_fields(entriesIds, fieldIds) do
