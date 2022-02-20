@@ -7,35 +7,34 @@ defmodule Dealcloud.Data.Cells do
   These APIs are more performant, but may not be the best when working with ETL tools.
   """
 
-  defdelegate get_entries_keys(entryType, config),
+  defdelegate get_keys(entryType, config),
     to: Dealcloud.Impl.Data.EntryData,
     as: :get_entries
 
-  defdelegate get_entries_ids(entryType, config),
+  defdelegate get_ids(entryType, config),
     to: Dealcloud.Impl.Data.EntryData,
     as: :get_entries_ids
 
-  defdelegate get_modified_entries(entryType, params, config),
+  defdelegate get_modified(entryType, params, config),
     to: Dealcloud.Impl.Data.EntryData,
     as: :get_modified_entries
 
-  defdelegate get_filtered_entryIds(entryType, filters, config),
+  defdelegate get_filtered(entryType, filters, config),
     to: Dealcloud.Impl.Data.EntryData,
     as: :filter_entries
 
-  defdelegate get_entries(entries, params, config),
-    to: Dealcloud.Impl.Data.EntryData,
-    as: :get
+  defdelegate get(entries, params, config),
+    to: Dealcloud.Impl.Data.EntryData
 
-  defdelegate get_entries_batch(entries, params, config),
+  defdelegate get_batch(entries, params, config),
     to: Dealcloud.Impl.Data.EntryBatch,
     as: :get
 
-  defdelegate create_entries(type, entries, config),
+  defdelegate create(type, entries, config),
     to: Dealcloud.Impl.Data.EntryData,
     as: :post
 
-  defdelegate update_entries(type, entries, config),
+  defdelegate update(type, entries, config),
     to: Dealcloud.Impl.Data.EntryData,
     as: :put
 
@@ -43,7 +42,7 @@ defmodule Dealcloud.Data.Cells do
     to: Dealcloud.Impl.Data.EntryBatch,
     as: :get_all_fields
 
-  defdelegate get_all_entries_and_fields(entryType, params, config),
+  defdelegate get_all(entryType, params, config),
     to: Dealcloud.Impl.Data.EntryBatch,
     as: :get_all_entries
 end
