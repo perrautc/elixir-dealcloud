@@ -1,75 +1,81 @@
-defmodule Dealcloud.Data do
+defmodule Dealcloud.Data.Cells do
   ################################################################
-  @doc """
-  These are cell APIs
+  @moduledoc """
+  These are cell APIs. These APIs use key-value pairs when communicating with the server.
+  Both Requests and Responses are sent as arrays of [{EntryId: 1, FieldId: 1, Value: "Hello"}].
+
+  These APIs are more performant, but may not be the best when working with ETL tools.
   """
 
-  defdelegate get_cells_entries_key(entryType, config),
+  defdelegate get_entries_keys(entryType, config),
     to: Dealcloud.Impl.Data.EntryData,
     as: :get_entries
 
-  defdelegate get_cells_entries_ids(entryType, config),
+  defdelegate get_entries_ids(entryType, config),
     to: Dealcloud.Impl.Data.EntryData,
     as: :get_entries_ids
 
-  defdelegate get_cells_modified_entries(entryType, params, config),
+  defdelegate get_modified_entries(entryType, params, config),
     to: Dealcloud.Impl.Data.EntryData,
     as: :get_modified_entries
 
-  defdelegate get_cells_filtered_entryIds(entryType, filters, config),
+  defdelegate get_filtered_entryIds(entryType, filters, config),
     to: Dealcloud.Impl.Data.EntryData,
     as: :filter_entries
 
-  defdelegate get_cells_entries(entries, params, config),
+  defdelegate get_entries(entries, params, config),
     to: Dealcloud.Impl.Data.EntryData,
     as: :get
 
-  defdelegate get_cells_entries_batch(entries, params, config),
+  defdelegate get_entries_batch(entries, params, config),
     to: Dealcloud.Impl.Data.EntryBatch,
     as: :get
 
-  defdelegate create_cells_entries(type, entries, config),
+  defdelegate create_entries(type, entries, config),
     to: Dealcloud.Impl.Data.EntryData,
     as: :post
 
-  defdelegate update_cells_entries(type, entries, config),
+  defdelegate update_entries(type, entries, config),
     to: Dealcloud.Impl.Data.EntryData,
     as: :put
 
-  defdelegate get_cells_all_fields(entryType, entryIds, params, config),
+  defdelegate get_all_fields(entryType, entryIds, params, config),
     to: Dealcloud.Impl.Data.EntryBatch,
     as: :get_all_fields
 
-  defdelegate get_cells_all_entries_and_fields(entryType, params, config),
+  defdelegate get_all_entries_and_fields(entryType, params, config),
     to: Dealcloud.Impl.Data.EntryBatch,
     as: :get_all_entries
+end
 
-  ################################################################
-  @doc """
-  These are Rows APIs
+defmodule DealCloud.Data.Rows do
+  @moduledoc """
+  These are Rows APIs, These APIs work using Arrays of Json objects.
+  These APIs are typical of what you see in most other systems. These APIs works better with ETL tools.
   """
-  defdelegate get_row_entries(entryTypeId, params, config),
+  defdelegate get_entries(entryTypeId, params, config),
     to: Dealcloud.Impl.Data.RowData,
     as: :get
 
-  defdelegate get_row_as_post(entryTypeId, body, config),
+  defdelegate get_as_post(entryTypeId, body, config),
     to: Dealcloud.Impl.Data.RowData,
     as: :query
 
-  defdelegate create_row_entries(entryTypeId, body, config),
+  defdelegate create_entries(entryTypeId, body, config),
     to: Dealcloud.Impl.Data.RowData,
     as: :post
 
-  defdelegate update_row_entries(entryTypeId, body, config),
+  defdelegate update_entries(entryTypeId, body, config),
     to: Dealcloud.Impl.Data.RowData,
     as: :patch
+end
 
-  #####################################
+defmodule Dealcloud.Data do
   @doc """
   Historical Data API - Retrives data from in the past
   """
   defdelegate get_historical(body, config), to: Dealcloud.Impl.Data.History, as: :get
-  #####################################
+
   @doc """
   View APIs
   """
@@ -79,9 +85,5 @@ defmodule Dealcloud.Data do
     to: Dealcloud.Impl.Data.View,
     as: :post
 
-  #####################################
-  @doc """
-  Merge API - merges 2 or more entries. Can handle up to 100 merges per request
-  """
   defdelegate merge(type, mergeRequest, config), to: Dealcloud.Impl.Data.Merge, as: :post
 end
