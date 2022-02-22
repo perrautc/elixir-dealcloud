@@ -1,6 +1,6 @@
 defmodule Dealcloud.Data.Filter do
   @moduledoc """
-  Handles authentication with DealCloud's API
+  Handles authentication with Dealcloud's API
   """
   defstruct(
     value: nil,

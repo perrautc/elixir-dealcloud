@@ -15,10 +15,20 @@ defmodule Dealcloud.Impl.Data.EntryData do
   """
 
   @spec get_entries(integer, Dealcloud.Auth.t()) :: any
-  def get_entries(type, config), do: [@name, type, "entries"] |> Data.get(%{}, config)
+  def get_entries(entryType, config), do: [@name, entryType, "entries"] |> Data.get(%{}, config)
 
-  def get_entries_ids(entryType, config),
-    do: get_entries(entryType, config) |> Enum.map(fn %{"id" => id} -> id end)
+  def get_entries_ids(entryType, config) do
+    response = get_entries(entryType, config)
+
+    case response do
+      {:ok, entries} ->
+        ids = entries |> Enum.map(fn %{"id" => id} -> id end)
+        {:ok, ids}
+
+      _ ->
+        response
+    end
+  end
 
   @spec get_modified_entries(any, Dealcloud.Data.ModifiedQuery.t(), Dealcloud.Auth.t()) :: any
   def get_modified_entries(type, params, config),

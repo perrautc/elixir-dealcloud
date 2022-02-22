@@ -27,7 +27,7 @@ defmodule Dealcloud.Data.Cells do
     to: Dealcloud.Impl.Data.EntryData
 
   defdelegate get_batch(entries, params, config),
-    to: Dealcloud.Impl.Data.EntryBatch,
+    to: Dealcloud.Impl.Data.Utility,
     as: :get
 
   defdelegate create(type, entries, config),
@@ -38,16 +38,16 @@ defmodule Dealcloud.Data.Cells do
     to: Dealcloud.Impl.Data.EntryData,
     as: :put
 
-  defdelegate get_all_fields(entryType, entryIds, params, config),
-    to: Dealcloud.Impl.Data.EntryBatch,
-    as: :get_all_fields
+  defdelegate all_fields(entryType, entryIds, config),
+    to: Dealcloud.Impl.Data.Utility,
+    as: :all_fields
 
-  defdelegate get_all(entryType, params, config),
-    to: Dealcloud.Impl.Data.EntryBatch,
-    as: :get_all_entries
+  defdelegate get_all(entryType, config),
+    to: Dealcloud.Impl.Data.Utility,
+    as: :all_entries
 end
 
-defmodule DealCloud.Data.Rows do
+defmodule Dealcloud.Data.Rows do
   @moduledoc """
   These are Rows APIs, These APIs work using Arrays of Json objects.
   These APIs are typical of what you see in most other systems. These APIs works better with ETL tools.

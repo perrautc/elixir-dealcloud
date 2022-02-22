@@ -2,7 +2,7 @@ defmodule Dealcloud.Auth do
   alias Dealcloud.Impl
 
   @moduledoc """
-  Handles authentication with DealCloud's API
+  Handles authentication with Dealcloud's API
   """
   @type t :: %__MODULE__{
           site: String.t(),
