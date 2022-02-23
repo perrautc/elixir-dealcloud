@@ -14,7 +14,7 @@ defmodule DealcloudTest.Schema.CurrenciesTest do
       conn |> Plug.Conn.send_resp(200, ~s<"[pong, ping]">)
     end)
 
-    assert "[pong, ping]" = Request.get(%Dealcloud.Auth{site: @site <> "#{bypass.port}"})
+    assert {:ok, "[pong, ping]"} = Request.get(%Dealcloud.Auth{site: @site <> "#{bypass.port}"})
   end
 
   test "request with correct method and path", %{bypass: bypass} do
@@ -24,6 +24,6 @@ defmodule DealcloudTest.Schema.CurrenciesTest do
       conn |> Plug.Conn.send_resp(200, ~s<"[pong, ping]">)
     end)
 
-    assert "[pong, ping]" = Request.get(%Dealcloud.Auth{site: @site <> "#{bypass.port}"})
+    assert {:ok, "[pong, ping]"} = Request.get(%Dealcloud.Auth{site: @site <> "#{bypass.port}"})
   end
 end

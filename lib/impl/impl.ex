@@ -71,7 +71,7 @@ defmodule Dealcloud.Impl do
       {:ok, response} ->
         process_status_code(response, p, dataProcessor)
 
-      {_, response} ->
+      response ->
         response
     end
   end
@@ -93,10 +93,10 @@ defmodule Dealcloud.Impl do
         make_request(%{p | config: config}, dataProcessor)
 
       _ ->
-        response
+        {:error, response}
     end
   end
 
-  def process_data(body, _p), do: body
+  def process_data(body, _p), do: {:ok, body}
   def url(parts), do: Enum.join(parts, "/")
 end

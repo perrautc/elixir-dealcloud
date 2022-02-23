@@ -13,7 +13,7 @@ defmodule DealcloudTest.Schema.UsersTest do
       conn |> Plug.Conn.send_resp(200, ~s<"[pong, ping]">)
     end)
 
-    assert "[pong, ping]" = Request.get(%Dealcloud.Auth{site: @site <> "#{bypass.port}"})
+    assert {:ok, "[pong, ping]"} = Request.get(%Dealcloud.Auth{site: @site <> "#{bypass.port}"})
   end
 
   test "request with correct method and path", %{bypass: bypass} do
@@ -23,7 +23,7 @@ defmodule DealcloudTest.Schema.UsersTest do
       conn |> Plug.Conn.send_resp(200, ~s<"[pong, ping]">)
     end)
 
-    assert "[pong, ping]" = Request.get(%Dealcloud.Auth{site: @site <> "#{bypass.port}"})
+    assert {:ok, "[pong, ping]"} = Request.get(%Dealcloud.Auth{site: @site <> "#{bypass.port}"})
   end
 
   test "with Http 500 response", %{bypass: bypass} do
@@ -33,14 +33,14 @@ defmodule DealcloudTest.Schema.UsersTest do
       conn |> Plug.Conn.send_resp(500, ~s<Server Error>)
     end)
 
-    assert %{status_code: 500, body: "Server Error"} =
+    assert {:error, %{status_code: 500, body: "Server Error"}} =
              Request.get(%Dealcloud.Auth{site: @site <> "#{bypass.port}"})
   end
 
   test "with unexpected outtage", %{bypass: bypass} do
     Bypass.down(bypass)
 
-    assert %{reason: :econnrefused} =
+    assert {:error, %{reason: :econnrefused}} =
              Request.get(%Dealcloud.Auth{site: @site <> "#{bypass.port}"})
   end
 end
