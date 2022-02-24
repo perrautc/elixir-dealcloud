@@ -1,4 +1,4 @@
-defmodule Dealcloud.Schema.SystemEntryTypes do
+defmodule Dealcloud.Impl.Schema.SystemEntryTypes do
   @name "systementrytypes"
   alias Dealcloud.Impl.Schema
   @spec get(Dealcloud.Auth.t()) :: any

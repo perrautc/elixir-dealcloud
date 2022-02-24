@@ -1,14 +1,13 @@
 defmodule Dealcloud.Impl.Schema.Fields do
   @name "fields"
   alias Dealcloud.Impl.Schema
-  @spec get(any, Dealcloud.Auth.t()) :: any
-  def get(fieldId, config)
-      when is_bitstring(fieldId) or is_integer(fieldId),
-      do: [@name,"#{fieldId}"] |> Schema.get(config)
-
-  def get(fields, config) do
+  defstruct fieldIds: nil
+  @spec get(integer | binary, Dealcloud.Auth.t()) :: any
+  def get(fields, config) when is_list(fields) do
     query = fields |> Enum.join("&fieldIds=")
-
-    Schema.get([@name], %{"fieldIds" => query}, config)
+    IO.inspect(query)
+    [@name] |> Schema.get(%__MODULE__{fieldIds: query}, config)
   end
+
+  def get(fieldId, config), do: [@name, "#{fieldId}"] |> Schema.get(config)
 end
