@@ -9,8 +9,8 @@ defmodule Dealcloud.Impl do
           url: String.t(),
           config: Dealcloud.Auth,
           params: %{},
-          body: List.t() | %{},
-          data: List.t()
+          body: list | %{},
+          data: list
         }
   def get(id, config) when is_integer(id), do: get(%{}, config)
 

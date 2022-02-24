@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.28.0">
+    <meta name="project" content="dealcloud v0.2.0">
+
+    <title>API Reference — dealcloud v0.2.0</title>
+    <link rel="stylesheet" href="dist/elixir-a816d167216329cc463d.css" />
+
+    <script src="dist/sidebar_items-3a8e0fc55d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-80aa23c1d96b6dc3c064.js"></script>
+
+
+  </head>
+  <body data-type="extras">
+    <script>
+
+      try {
+        if (localStorage.getItem('night-mode') === 'true') {
+          document.body.classList.add('night-mode');
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+
+<section class="sidebar">
+  <button class="sidebar-button sidebar-toggle">
+    <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+  </button>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+
+    <div class="sidebar-projectDetails">
+      <a href="api-reference.html" class="sidebar-projectName" translate="no">
+dealcloud
+      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v0.2.0
+      </strong>
+    </div>
+    <ul class="sidebar-listNav">
+      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+    </ul>
+  </div>
+
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+<button class="settings display-settings">
+  <i class="ri-settings-3-line"></i>
+  <span class="sr-only">Settings</span>
+</button>
+
+
+  <span>API Reference <small class="app-vsn">dealcloud v0.2.0</small></span>
+</h1>
+
+
+  <section class="details-list">
+    <h2 id="modules" class="section-heading">
+  <a href="#modules" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Modules
+</h2>
+
+    <div class="summary">
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.html" translate="no">Dealcloud</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>A blazing fast SDK for using the Dealcloud | OnePlace APIs in pure Elixir.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Auth.html" translate="no">Dealcloud.Auth</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Handles authentication with Dealcloud's API</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Data.html" translate="no">Dealcloud.Data</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Data.Cells.html" translate="no">Dealcloud.Data.Cells</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>These are cell APIs. These APIs use key-value pairs when communicating with the server.
+Both Requests and Responses are sent as arrays of [{EntryId: 1, FieldId: 1, Value: &quot;Hello&quot;}].</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Data.Filter.html" translate="no">Dealcloud.Data.Filter</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Handles authentication with Dealcloud's API</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Data.HistorQuery.html" translate="no">Dealcloud.Data.HistorQuery</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Data.MergeRequest.html" translate="no">Dealcloud.Data.MergeRequest</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Data.ModifiedQuery.html" translate="no">Dealcloud.Data.ModifiedQuery</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Data.PostQuery.html" translate="no">Dealcloud.Data.PostQuery</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Data.Query.html" translate="no">Dealcloud.Data.Query</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Data.Record.html" translate="no">Dealcloud.Data.Record</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Data.Rows.html" translate="no">Dealcloud.Data.Rows</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>These are Rows APIs, These APIs work using Arrays of Json objects.
+These APIs are typical of what you see in most other systems. These APIs works better with ETL tools.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Data.ViewFilter.html" translate="no">Dealcloud.Data.ViewFilter</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.html" translate="no">Dealcloud.Impl</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Implementation details, utility functions</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Auth.html" translate="no">Dealcloud.Impl.Auth</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Data.html" translate="no">Dealcloud.Impl.Data</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Data contains all apis needed to work with data in dealcloud</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Data.EntryData.html" translate="no">Dealcloud.Impl.Data.EntryData</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>EntryTypes contains all apis needed to work with entries in Dealcloud, using the cells API</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Data.History.html" translate="no">Dealcloud.Impl.Data.History</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Data.Merge.html" translate="no">Dealcloud.Impl.Data.Merge</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This contains the functions for merging 2 or more entries.
+You're able to perform up to 100 mergest per call</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Data.RowData.html" translate="no">Dealcloud.Impl.Data.RowData</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Data.Utility.html" translate="no">Dealcloud.Impl.Data.Utility</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>EntryData contains the API to get entries as cells</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Data.View.html" translate="no">Dealcloud.Impl.Data.View</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Management.html" translate="no">Dealcloud.Impl.Management</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Management contains all of the apis needed to work with users</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Management.Activity.html" translate="no">Dealcloud.Impl.Management.Activity</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Management.Group.html" translate="no">Dealcloud.Impl.Management.Group</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Management.License.html" translate="no">Dealcloud.Impl.Management.License</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Management.Proxy.html" translate="no">Dealcloud.Impl.Management.Proxy</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Management.User.html" translate="no">Dealcloud.Impl.Management.User</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Schema.html" translate="no">Dealcloud.Impl.Schema</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Management contains all of the apis needed to work with users</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Schema.AllFields.html" translate="no">Dealcloud.Impl.Schema.AllFields</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Schema.ChoiceFieldValues.html" translate="no">Dealcloud.Impl.Schema.ChoiceFieldValues</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Schema.Currencies.html" translate="no">Dealcloud.Impl.Schema.Currencies</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Schema.EntryTypes.html" translate="no">Dealcloud.Impl.Schema.EntryTypes</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Schema.FieldTypes.html" translate="no">Dealcloud.Impl.Schema.FieldTypes</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Schema.Fields.html" translate="no">Dealcloud.Impl.Schema.Fields</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Schema.FilterOperations.html" translate="no">Dealcloud.Impl.Schema.FilterOperations</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Schema.SystemEntryTypes.html" translate="no">Dealcloud.Impl.Schema.SystemEntryTypes</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Schema.SystemFieldTypes.html" translate="no">Dealcloud.Impl.Schema.SystemFieldTypes</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Schema.TimeZones.html" translate="no">Dealcloud.Impl.Schema.TimeZones</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Impl.Schema.Users.html" translate="no">Dealcloud.Impl.Schema.Users</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Management.html" translate="no">Dealcloud.Management</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Management.ActivityQuery.html" translate="no">Dealcloud.Management.ActivityQuery</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Management.Proxy.html" translate="no">Dealcloud.Management.Proxy</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Management.ProxyQuery.html" translate="no">Dealcloud.Management.ProxyQuery</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Management.User.html" translate="no">Dealcloud.Management.User</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Management.UserLicense.html" translate="no">Dealcloud.Management.UserLicense</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Management.UserQuery.html" translate="no">Dealcloud.Management.UserQuery</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Dealcloud.Schema.html" translate="no">Dealcloud.Schema</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Schema tells you information about your site and about the system.</p></div>
+
+</div>
+
+    </div>
+  </section>
+
+
+<div class="bottom-actions">
+  <div class="bottom-actions-item">
+
+  </div>
+  <div class="bottom-actions-item">
+
+  </div>
+</div>
+
+      <footer class="footer">
+
+        <p>
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.0) for the
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

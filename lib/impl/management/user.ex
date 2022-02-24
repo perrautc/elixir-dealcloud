@@ -8,15 +8,15 @@ defmodule Dealcloud.Impl.Management.User do
 
   def get_by_id(userIds, config), do: [@name <> "s"] |> Management.post(userIds, %{}, config)
 
-  @spec get(Management.userQuery() | integer, Dealcloud.Auth.t()) :: List[User.t()]
+  @spec get(Dealcloud.Management.UserQuery | integer, Dealcloud.Auth) :: list[User]
   def get(params, config), do: [@name] |> Management.get(params, config)
 
-  @spec post(List[User.t()], Dealcloud.Auth.t()) :: List[User.t()]
+  @spec post(list[User], Dealcloud.Auth) :: list[User]
   def post(body, config), do: [@name] |> Management.post(body, %{}, config)
 
-  @spec put(List[User.t()], Dealcloud.Auth.t()) :: List[User.t()]
+  @spec put(list[User], Dealcloud.Auth) :: list[User]
   def put(body, config), do: [@name] |> Management.put(body, %{}, config)
 
-  @spec delete(integer | String.t(), Dealcloud.Auth.t()) :: any
+  @spec delete(integer | String.t(), Dealcloud.Auth) :: any
   def delete(userId, config), do: [@name, userId] |> Management.delete(config)
 end

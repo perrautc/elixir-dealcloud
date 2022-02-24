@@ -4,8 +4,12 @@ defmodule Dealcloud.Impl.Management.Proxy do
 
   @name "proxy"
 
-  @spec get(ProxyQuery.t(), Auth.t()) :: any
+  @spec get(Dealcloud.Management.ProxyQuery, Auth) :: any
   def get(query, config), do: ["user", @name] |> Management.get(query, config)
 
+  @spec post(
+          Dealcloud.Management.Proxy,
+          Auth
+        ) :: any
   def post(body, config), do: ["user", @name] |> Management.post(body, %{}, config)
 end

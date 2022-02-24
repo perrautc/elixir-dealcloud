@@ -5,15 +5,15 @@ defmodule Dealcloud.Management do
   @doc """
   These are the user management APIs
   """
-  @spec get_user(Dealcloud.Management.UserQuery.t(), Dealcloud.Auth.t()) :: any
+  @spec get_user(Dealcloud.Management.UserQuery, Dealcloud.Auth) :: any
   defdelegate get_user(param, config), to: Management.User, as: :get
-  @spec get_user_by_id(integer | List.t(integer), Dealcloud.Auth.t()) :: any
+  @spec get_user_by_id(integer | list(integer), Dealcloud.Auth) :: any
   defdelegate get_user_by_id(param, config), to: Management.User, as: :get_by_id
-  @spec create_user(Dealcloud.Management.User.t(), Dealcloud.Auth.t()) :: any
+  @spec create_user(Dealcloud.Management.User, Dealcloud.Auth) :: any
   defdelegate create_user(body, config), to: Management.User, as: :post
-  @spec update_user(integer, Dealcloud.Auth.t()) :: any
+  @spec update_user(integer, Dealcloud.Auth) :: any
   defdelegate update_user(body, config), to: Management.User, as: :put
-  @spec delete_user(binary, Dealcloud.Auth.t()) :: any
+  @spec delete_user(binary, Dealcloud.Auth) :: any
   defdelegate delete_user(userId, config), to: Management.User, as: :delete
   ################################################################
   @doc """
@@ -27,9 +27,9 @@ defmodule Dealcloud.Management do
   @doc """
   These are the user proxy APIs
   """
-  @spec get_user_proxy(Dealcloud.Management.ProxyQuery.t(), Dealcloud.Auth.t()) :: any
+  @spec get_user_proxy(Dealcloud.Management.ProxyQuery, Dealcloud.Auth) :: any
   defdelegate get_user_proxy(query, config), to: Management.Proxy, as: :get
-  @spec create_user_proxy(Dealcloud.Management.Proxy.t(), Dealcloud.Auth.t()) :: any
+  @spec create_user_proxy(Dealcloud.Management.Proxy, Dealcloud.Auth) :: any
   defdelegate create_user_proxy(body, config), to: Management.Proxy, as: :post
   ################################################################
   @doc """
@@ -47,15 +47,15 @@ defmodule Dealcloud.Management do
   These are the user activity APIs
   """
   @spec get_user_activity(
-          Dealcloud.Management.ActivityQuery.t(),
-          Dealcloud.Management.UserQuery.t(),
-          Dealcloud.Auth.t()
+          Dealcloud.Management.ActivityQuery,
+          Dealcloud.Management.UserQuery,
+          Dealcloud.Auth
         ) :: any
   defdelegate get_user_activity(body, query, config), to: Management.Activity, as: :post
 
   @spec get_user_activity(
-          Dealcloud.Management.ActivityQuery.t(),
-          Dealcloud.Auth.t()
+          Dealcloud.Management.ActivityQuery,
+          Dealcloud.Auth
         ) :: any
   defdelegate get_user_activity(body, config), to: Management.Activity, as: :post
 end
