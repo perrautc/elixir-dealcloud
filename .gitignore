@@ -1,3 +1,4 @@
 .iex.exs
 _build
 .elixir_ls
+deps
