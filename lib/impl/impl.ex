@@ -47,9 +47,9 @@ defmodule Dealcloud.Impl do
 
   defp to_params(map) when map == %{}, do: []
 
-  defp to_params(params) do
-    Map.to_list(params) |> tl()
-  end
+  defp to_params(%{__struct__: _} = params), do: Map.to_list(params) |> tl()
+
+  defp to_params(params), do: Map.to_list(params)
 
   def make_request(
         p = %{

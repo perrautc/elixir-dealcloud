@@ -26,6 +26,20 @@ defmodule DealcloudTest.Schema.UsersTest do
     assert {:ok, "[pong, ping]"} = Request.get(%Dealcloud.Auth{site: @site <> "#{bypass.port}"})
   end
 
+  test "request with correct query params", %{bypass: bypass} do
+    Bypass.expect(bypass, fn conn ->
+      assert "GET" == conn.method
+      assert "/api/rest/v4/schema/users" == conn.request_path
+      assert %{"activeOnly" => "true"} == conn.params
+      conn |> Plug.Conn.send_resp(200, ~s<"[pong, ping]">)
+    end)
+
+    assert {:ok, "[pong, ping]"} =
+             Request.get(%{"activeOnly" => "true"}, %Dealcloud.Auth{
+               site: @site <> "#{bypass.port}"
+             })
+  end
+
   test "with Http 500 response", %{bypass: bypass} do
     Bypass.expect(bypass, fn conn ->
       assert "GET" == conn.method
