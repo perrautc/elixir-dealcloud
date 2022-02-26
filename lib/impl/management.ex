@@ -58,11 +58,11 @@ defmodule Dealcloud.Impl.Management do
     |> Impl.make_request(dataProcessor)
   end
 
-  defp process_data([], p), do: p.data
+  defp process_data([], p), do: {:ok, p.data}
 
   defp process_data(body, _p = %{params: params, requestType: :get})
        when params == %{} do
-    [body]
+    {:ok, [body]}
   end
 
   defp process_data(body, p = %{data: data, params: params, requestType: :get}) do
@@ -70,5 +70,5 @@ defmodule Dealcloud.Impl.Management do
     |> Impl.make_request(&process_data/2)
   end
 
-  defp process_data(body, _p), do: body
+  defp process_data(body, _p), do: {:ok, body}
 end

@@ -17,7 +17,7 @@ defmodule DealcloudTest.Schema.FieldsTest do
     end)
 
     assert {:ok, "[pong, ping]"} =
-             Request.get(1234, %Dealcloud.Auth{site: @site <> "#{bypass.port}"})
+             Request.get_field(1234, %Dealcloud.Auth{site: @site <> "#{bypass.port}"})
   end
 
   test "request for multiple fields", %{bypass: bypass} do
@@ -33,6 +33,6 @@ defmodule DealcloudTest.Schema.FieldsTest do
     end)
 
     assert {:ok, "[pong, ping]"} =
-             Request.get([1, 2, 3], %Dealcloud.Auth{site: @site <> "#{bypass.port}"})
+             Request.get_fields([1, 2, 3], %Dealcloud.Auth{site: @site <> "#{bypass.port}"})
   end
 end

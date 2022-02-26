@@ -19,9 +19,9 @@ defmodule Dealcloud.Management do
   @doc """
   These are the user group APIs
   """
-  @spec get_user_group(integer, Dealcloud.Auth.t()) :: any
+  @spec get_user_group(integer, Dealcloud.Auth) :: any
   defdelegate get_user_group(groupId, config), to: Management.Group, as: :get
-  @spec get_user_groups(Dealcloud.Auth.t()) :: any
+  @spec get_user_groups(Dealcloud.Auth) :: any
   defdelegate get_user_groups(config), to: Management.Group, as: :groups
   ################################################################
   @doc """
@@ -37,9 +37,9 @@ defmodule Dealcloud.Management do
   """
   @spec get_user_license(integer, Dealcloud.Auth.t()) :: any
   defdelegate get_user_license(userId, config), to: Management.License, as: :get
-  @spec update_user_license(Dealcloud.Management.UserLicense.t(), Dealcloud.Auth.t()) :: :ok
+  @spec update_user_license(Dealcloud.Management.License, Dealcloud.Auth) :: :ok
   defdelegate update_user_license(license, config), to: Management.License, as: :put
-  @spec get_users_license(Dealcloud.Management.UserQuery.t(), Dealcloud.Auth.t()) :: any
+  @spec get_users_license(Dealcloud.Management.Query, Dealcloud.Auth) :: any
   defdelegate get_users_license(params, config), to: Management.License, as: :licenses
   defdelegate get_users_license(config), to: Management.License, as: :licenses
   ################################################################

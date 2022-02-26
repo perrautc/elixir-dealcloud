@@ -28,7 +28,7 @@ defmodule Dealcloud.Impl do
   def patch(body, params, config), do: any(:patch, body, params, config)
   def patch(body, config), do: patch(body, %{}, config)
 
-  def any(requestType, body, params, config) do
+  defp any(requestType, body, params, config) do
     %__MODULE__{
       body: body,
       params: params,
@@ -97,6 +97,6 @@ defmodule Dealcloud.Impl do
     end
   end
 
-  def process_data(body, _p), do: {:ok, body}
+  defp process_data(body, _p), do: {:ok, body}
   def url(parts), do: Enum.join(parts, "/")
 end

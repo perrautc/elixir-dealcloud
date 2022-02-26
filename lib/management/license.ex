@@ -1,4 +1,4 @@
-defmodule Dealcloud.Management.UserLicense do
+defmodule Dealcloud.Management.License do
   defstruct userId: nil, licenseType: nil, description: nil
 
   @type t :: %__MODULE__{

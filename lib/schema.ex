@@ -101,16 +101,16 @@ defmodule Dealcloud.Schema do
 
   Schema.get_field(3, %Auth{})
   """
-  @spec get_field(binary, Dealcloud.Auth.t()) :: any
-  defdelegate get_field(fieldId, config), to: Schema.Fields, as: :get
+  @spec get_field(integer, Dealcloud.Auth) :: any
+  defdelegate get_field(fieldId, config), to: Schema.Fields
 
   @doc """
   Returns information of a selection of fields passed in as query params
 
   Schema.get_fields([3,4,5], %Auth{})
   """
-  @spec get_fields(list(integer()), Dealcloud.Auth.t()) :: any
-  defdelegate get_fields(fields, config), to: Schema.Fields, as: :get
+  @spec get_fields(list(integer), Dealcloud.Auth) :: any
+  defdelegate get_fields(fields, config), to: Schema.Fields
 
   @doc """
   Returns all users in the site.

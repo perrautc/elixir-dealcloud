@@ -7,8 +7,8 @@ defmodule Dealcloud.Impl.Management.License do
 
   def licenses(query, config), do: [@name <> "s"] |> Management.get(query, config)
 
-  def licenses(config), do: %Dealcloud.Management.UserQuery{} |> licenses(config)
+  def licenses(config), do: %Dealcloud.Management.Query{} |> licenses(config)
 
-  @spec put(UserLicense.t(), Auth.t()) :: :ok
+  @spec put(Dealcloud.Management.License, Auth) :: :ok
   def put(userLicense, config), do: [@name] |> Management.put(userLicense, %{}, config)
 end

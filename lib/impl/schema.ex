@@ -22,7 +22,7 @@ defmodule Dealcloud.Impl.Schema do
       config: config,
       url: ([config.site, config.schema_url] ++ paths) |> Impl.url()
     }
-    |> Impl.make_request(&Impl.process_data/2)
+    |> Impl.make_request()
   end
 
   def get(paths, params, config) do
@@ -32,7 +32,7 @@ defmodule Dealcloud.Impl.Schema do
       config: config,
       url: ([config.site, config.schema_url] ++ paths) |> Impl.url()
     }
-    |> Impl.make_request(&Impl.process_data/2)
+    |> Impl.make_request()
   end
 
   def post(paths, body, config) do
@@ -43,6 +43,6 @@ defmodule Dealcloud.Impl.Schema do
       config: config,
       url: ([config.site, config.schema_url] ++ paths) |> Impl.url()
     }
-    |> Impl.make_request(&Impl.process_data/2)
+    |> Impl.make_request()
   end
 end
