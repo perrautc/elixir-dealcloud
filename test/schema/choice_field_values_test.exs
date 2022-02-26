@@ -1,5 +1,5 @@
 defmodule DealcloudTest.Schema.ChoiceFieldValuesTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   alias Dealcloud.Impl.Schema.ChoiceFieldValues, as: Request
 

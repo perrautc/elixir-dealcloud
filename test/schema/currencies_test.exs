@@ -1,5 +1,5 @@
 defmodule DealcloudTest.Schema.CurrenciesTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   alias Dealcloud.Impl.Schema.Currencies, as: Request
 

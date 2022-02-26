@@ -1,5 +1,5 @@
 defmodule DealcloudTest.Schema.FieldTypesTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   alias Dealcloud.Impl.Schema.FieldTypes, as: Request
 

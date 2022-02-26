@@ -1,5 +1,5 @@
 defmodule DealcloudTest.Schema.FiltersTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   alias Dealcloud.Impl.Schema.FilterOperations, as: Request
 

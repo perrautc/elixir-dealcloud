@@ -1,5 +1,5 @@
 defmodule DealcloudTest.Schema.TimeZonesTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   alias Dealcloud.Impl.Schema.TimeZones, as: Request
 

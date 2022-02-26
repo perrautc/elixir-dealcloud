@@ -1,5 +1,5 @@
 defmodule DealcloudTest.Schema.EntryTypes do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   alias Dealcloud.Impl.Schema.EntryTypes, as: Request
 

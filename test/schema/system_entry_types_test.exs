@@ -1,5 +1,5 @@
 defmodule DealcloudTest.Schema.SystemEntryTypesTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   alias Dealcloud.Impl.Schema.SystemEntryTypes, as: Request
 

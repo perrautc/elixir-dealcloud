@@ -1,5 +1,5 @@
 defmodule DealcloudTest.Schema.UsersTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   alias Dealcloud.Impl.Schema.Users, as: Request
   @site "http://localhost:"

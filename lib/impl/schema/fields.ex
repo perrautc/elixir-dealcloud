@@ -5,7 +5,6 @@ defmodule Dealcloud.Impl.Schema.Fields do
   @spec get(integer | binary, Dealcloud.Auth.t()) :: any
   def get(fields, config) when is_list(fields) do
     query = fields |> Enum.join("&fieldIds=")
-    IO.inspect(query)
     [@name] |> Schema.get(%__MODULE__{fieldIds: query}, config)
   end
 
