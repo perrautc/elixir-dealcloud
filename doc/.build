@@ -39,11 +39,11 @@ Dealcloud.Impl.Schema.Users.html
 Dealcloud.Impl.Schema.html
 Dealcloud.Impl.html
 Dealcloud.Management.ActivityQuery.html
+Dealcloud.Management.License.html
 Dealcloud.Management.Proxy.html
 Dealcloud.Management.ProxyQuery.html
+Dealcloud.Management.Query.html
 Dealcloud.Management.User.html
-Dealcloud.Management.UserLicense.html
-Dealcloud.Management.UserQuery.html
 Dealcloud.Management.html
 Dealcloud.Schema.html
 Dealcloud.html
@@ -55,7 +55,7 @@ dist/html/fonts/remixicon.svg
 dist/html/fonts/remixicon.ttf
 dist/html/fonts/remixicon.woff
 dist/html/fonts/remixicon.woff2
-dist/search_items-3f456bcc77.js
-dist/sidebar_items-3a8e0fc55d.js
+dist/search_items-7e86d3d929.js
+dist/sidebar_items-88b834dd23.js
 index.html
 search.html

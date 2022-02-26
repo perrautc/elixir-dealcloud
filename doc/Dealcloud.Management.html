@@ -10,7 +10,7 @@
     <title>Dealcloud.Management — dealcloud v0.2.0</title>
     <link rel="stylesheet" href="dist/elixir-a816d167216329cc463d.css" />
 
-    <script src="dist/sidebar_items-3a8e0fc55d.js"></script>
+    <script src="dist/sidebar_items-88b834dd23.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -461,7 +461,7 @@ Functions
       <h2>Specs</h2>
       <div class="specs">
 
-          <pre translate="no">get_user_group(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), <a href="Dealcloud.Auth.html#t:t/0">Dealcloud.Auth.t</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+          <pre translate="no">get_user_group(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), Dealcloud.Auth) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
 
       </div>
 
@@ -485,7 +485,7 @@ Functions
       <h2>Specs</h2>
       <div class="specs">
 
-          <pre translate="no">get_user_groups(<a href="Dealcloud.Auth.html#t:t/0">Dealcloud.Auth.t</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+          <pre translate="no">get_user_groups(Dealcloud.Auth) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
 
       </div>
 
@@ -574,8 +574,7 @@ Functions
       <h2>Specs</h2>
       <div class="specs">
 
-          <pre translate="no">get_users_license(<a href="Dealcloud.Management.UserQuery.html#t:t/0">Dealcloud.Management.UserQuery.t</a>(), <a href="Dealcloud.Auth.html#t:t/0">Dealcloud.Auth.t</a>()) ::
-  <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+          <pre translate="no">get_users_license(Dealcloud.Management.Query, Dealcloud.Auth) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
 
       </div>
 
@@ -623,8 +622,7 @@ Functions
       <h2>Specs</h2>
       <div class="specs">
 
-          <pre translate="no">update_user_license(<a href="Dealcloud.Management.UserLicense.html#t:t/0">Dealcloud.Management.UserLicense.t</a>(), <a href="Dealcloud.Auth.html#t:t/0">Dealcloud.Auth.t</a>()) ::
-  :ok</pre>
+          <pre translate="no">update_user_license(Dealcloud.Management.License, Dealcloud.Auth) :: :ok</pre>
 
       </div>
 

@@ -33,4 +33,20 @@ defmodule DealcloudTest.Management.LicenseTest do
 
     assert {:ok, []} = Request.licenses(%Dealcloud.Auth{site: @site <> "#{bypass.port}"})
   end
+
+  test "can update user license", %{bypass: bypass} do
+    Bypass.expect(bypass, fn conn ->
+      assert "PUT" == conn.method
+
+      assert "/api/rest/v1/management/userlicense" ==
+               conn.request_path
+
+      conn |> Plug.Conn.send_resp(200, ~s<[]>)
+    end)
+
+    assert {:ok, []} =
+             Request.put(%Dealcloud.Management.License{}, %Dealcloud.Auth{
+               site: @site <> "#{bypass.port}"
+             })
+  end
 end
