@@ -19,7 +19,6 @@ Dealcloud.Impl.Data.RowData.html
 Dealcloud.Impl.Data.Utility.html
 Dealcloud.Impl.Data.View.html
 Dealcloud.Impl.Data.html
-Dealcloud.Impl.Schema.Users.html
 Dealcloud.Management.html
 Dealcloud.Schema.html
 Dealcloud.html
@@ -31,7 +30,7 @@ dist/html/fonts/remixicon.svg
 dist/html/fonts/remixicon.ttf
 dist/html/fonts/remixicon.woff
 dist/html/fonts/remixicon.woff2
-dist/search_items-e6aede5e2d.js
-dist/sidebar_items-482d104077.js
+dist/search_items-b7ae3144cc.js
+dist/sidebar_items-dcbd2a029d.js
 index.html
 search.html
