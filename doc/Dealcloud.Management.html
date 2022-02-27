@@ -10,7 +10,7 @@
     <title>Dealcloud.Management — dealcloud v0.2.0</title>
     <link rel="stylesheet" href="dist/elixir-a816d167216329cc463d.css" />
 
-    <script src="dist/sidebar_items-88b834dd23.js"></script>
+    <script src="dist/sidebar_items-482d104077.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -93,6 +93,10 @@ dealcloud
 </h1>
 
 
+  <section id="moduledoc">
+<p>Management contains all of the apis needed to work with users</p><p>With these APIs you are able to:</p><ol><li>Get Users, ~&gt; By email, By modified data, by Id</li><li>Create Users</li><li>Update users ~&gt; change users names, active/inactive, change email addresses, change user permissions</li><li>Delete users</li><li>Get User groups</li><li>Get user group details</li><li>Get user activities</li><li>Get proxy assignments</li><li>Create proxy assignments</li></ol>
+  </section>
+
 
   <section id="summary" class="details-list">
     <h1 class="section-heading">
@@ -103,6 +107,61 @@ dealcloud
       Summary
     </h1>
 
+  <div class="summary-types summary">
+    <h2>
+      <a href="#types">Types</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:activityQuery/0" translate="no">activityQuery()</a>
+
+        </div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:license/0" translate="no">license()</a>
+
+        </div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:proxy/0" translate="no">proxy()</a>
+
+        </div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:proxyQuery/0" translate="no">proxyQuery()</a>
+
+        </div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:query/0" translate="no">query()</a>
+
+        </div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:user/0" translate="no">user()</a>
+
+        </div>
+
+      </div>
+
+  </div>
+
   <div class="summary-functions summary">
     <h2>
       <a href="#functions">Functions</a>
@@ -110,21 +169,21 @@ dealcloud
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#create_user/2" translate="no">create_user(body, config)</a>
+          <a href="#create_user_proxy/2" translate="no">create_user_proxy(body, config)</a>
 
         </div>
 
-          <div class="summary-synopsis"><p>See <a href="Dealcloud.Impl.Management.User.html#post/2"><code class="inline">Dealcloud.Impl.Management.User.post/2</code></a>.</p></div>
+          <div class="summary-synopsis"><p>This creates new proxy assignments. There's no way to update an existing proxy assignments. Proxy assignments can be replaced</p></div>
 
       </div>
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#create_user_proxy/2" translate="no">create_user_proxy(body, config)</a>
+          <a href="#create_users/2" translate="no">create_users(body, config)</a>
 
         </div>
 
-          <div class="summary-synopsis"><p>See <a href="Dealcloud.Impl.Management.Proxy.html#post/2"><code class="inline">Dealcloud.Impl.Management.Proxy.post/2</code></a>.</p></div>
+          <div class="summary-synopsis"><p>Takes a list of <code class="inline">Dealcloud.Management.user()</code> and creates them as new</p></div>
 
       </div>
 
@@ -134,7 +193,17 @@ dealcloud
 
         </div>
 
-          <div class="summary-synopsis"><p>See <a href="Dealcloud.Impl.Management.User.html#delete/2"><code class="inline">Dealcloud.Impl.Management.User.delete/2</code></a>.</p></div>
+          <div class="summary-synopsis"><p>Takes a user id and deletes the associated user</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#get_by_ids/2" translate="no">get_by_ids(param, config)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Takes a list of integers representing the user's Id and returns the users</p></div>
 
       </div>
 
@@ -144,7 +213,8 @@ dealcloud
 
         </div>
 
-          <div class="summary-synopsis"><p>These are the user management APIs</p></div>
+          <div class="summary-synopsis"><p>Takes a query containing either the user's email address or a dateTime, attempts to
+find the user or return all user modified since the dateTime provided</p></div>
 
       </div>
 
@@ -154,7 +224,8 @@ dealcloud
 
         </div>
 
-          <div class="summary-synopsis"><p>See <a href="Dealcloud.Impl.Management.Activity.html#post/2"><code class="inline">Dealcloud.Impl.Management.Activity.post/2</code></a>.</p></div>
+          <div class="summary-synopsis"><p>These are the user activity APIs
+  ## Examples</p></div>
 
       </div>
 
@@ -164,17 +235,8 @@ dealcloud
 
         </div>
 
-          <div class="summary-synopsis"><p>These are the user activity APIs</p></div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#get_user_by_id/2" translate="no">get_user_by_id(param, config)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>See <a href="Dealcloud.Impl.Management.User.html#get_by_id/2"><code class="inline">Dealcloud.Impl.Management.User.get_by_id/2</code></a>.</p></div>
+          <div class="summary-synopsis"><p>These are the user activity APIs
+  ## Examples</p></div>
 
       </div>
 
@@ -194,7 +256,7 @@ dealcloud
 
         </div>
 
-          <div class="summary-synopsis"><p>See <a href="Dealcloud.Impl.Management.Group.html#groups/1"><code class="inline">Dealcloud.Impl.Management.Group.groups/1</code></a>.</p></div>
+          <div class="summary-synopsis"><p>These are the user group APIs</p></div>
 
       </div>
 
@@ -224,7 +286,7 @@ dealcloud
 
         </div>
 
-          <div class="summary-synopsis"><p>See <a href="Dealcloud.Impl.Management.License.html#licenses/1"><code class="inline">Dealcloud.Impl.Management.License.licenses/1</code></a>.</p></div>
+          <div class="summary-synopsis"><p>Get all licenses</p></div>
 
       </div>
 
@@ -234,7 +296,7 @@ dealcloud
 
         </div>
 
-          <div class="summary-synopsis"><p>See <a href="Dealcloud.Impl.Management.License.html#licenses/2"><code class="inline">Dealcloud.Impl.Management.License.licenses/2</code></a>.</p></div>
+          <div class="summary-synopsis"><p>Get licenses for multiple users</p></div>
 
       </div>
 
@@ -244,7 +306,7 @@ dealcloud
 
         </div>
 
-          <div class="summary-synopsis"><p>See <a href="Dealcloud.Impl.Management.User.html#put/2"><code class="inline">Dealcloud.Impl.Management.User.put/2</code></a>.</p></div>
+          <div class="summary-synopsis"><p>Takes a list of <code class="inline">Dealcloud.Management.user()</code> and updates them</p></div>
 
       </div>
 
@@ -254,7 +316,17 @@ dealcloud
 
         </div>
 
-          <div class="summary-synopsis"><p>See <a href="Dealcloud.Impl.Management.License.html#put/2"><code class="inline">Dealcloud.Impl.Management.License.put/2</code></a>.</p></div>
+          <div class="summary-synopsis"><p>Update licenses</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#user_get_by_id/2" translate="no">user_get_by_id(param, config)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Takes a integer representing the user's Id and returns the user</p></div>
 
       </div>
 
@@ -262,6 +334,198 @@ dealcloud
 
   </section>
 
+
+  <section id="types" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#types">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Types
+    </h1>
+    <div class="types-list">
+<section class="detail" id="t:activityQuery/0">
+
+  <div class="detail-header">
+    <a href="#t:activityQuery/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">activityQuery()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">activityQuery() :: %Dealcloud.Management.ActivityQuery{
+  activity: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  dateFrom: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  dateTo: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  source: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  userIds: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
+}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:license/0">
+
+  <div class="detail-header">
+    <a href="#t:license/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">license()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">license() :: %Dealcloud.Management.License{
+  description: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  licenseType: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  userId: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
+}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:proxy/0">
+
+  <div class="detail-header">
+    <a href="#t:proxy/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">proxy()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">proxy() :: %Dealcloud.Management.Proxy{proxyUserId: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(), userIds: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:proxyQuery/0">
+
+  <div class="detail-header">
+    <a href="#t:proxyQuery/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">proxyQuery()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">proxyQuery() :: %Dealcloud.Management.ProxyQuery{
+  pageNumber: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  pageSize: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  proxyQuery: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  searchByName: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  userQuery: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
+}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:query/0">
+
+  <div class="detail-header">
+    <a href="#t:query/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">query()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">query() :: %Dealcloud.Management.Query{
+  email: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  isBillable: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  modifiedSince: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  pageNumber: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  pageSize: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
+}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:user/0">
+
+  <div class="detail-header">
+    <a href="#t:user/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">user()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">user() :: %Dealcloud.Management.User{
+  createdBy: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  createdDate: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  email: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  federationId: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  firstName: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  group: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  isActive: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  isLocked: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  lastName: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  modifiedBy: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  modifiedDate: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
+}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+
+    </div>
+  </section>
 
   <section id="functions" class="details-list">
     <h1 class="section-heading">
@@ -272,30 +536,6 @@ dealcloud
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="create_user/2">
-
-  <div class="detail-header">
-    <a href="#create_user/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">create_user(body, config)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <h2>Specs</h2>
-      <div class="specs">
-
-          <pre translate="no">create_user(Dealcloud.Management.User, Dealcloud.Auth) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
-
-      </div>
-
-<p>See <a href="Dealcloud.Impl.Management.User.html#post/2"><code class="inline">Dealcloud.Impl.Management.User.post/2</code></a>.</p>
-  </section>
-</section>
 <section class="detail" id="create_user_proxy/2">
 
   <div class="detail-header">
@@ -317,7 +557,39 @@ Functions
 
       </div>
 
-<p>See <a href="Dealcloud.Impl.Management.Proxy.html#post/2"><code class="inline">Dealcloud.Impl.Management.Proxy.post/2</code></a>.</p>
+<p>This creates new proxy assignments. There's no way to update an existing proxy assignments. Proxy assignments can be replaced</p><h2 id="create_user_proxy/2-examples" class="section-heading">
+  <a href="#create_user_proxy/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Management</span><span class="o">.</span><span class="n">get_user_proxy</span><span class="p" data-group-id="8284728201-1">(</span><span class="p" data-group-id="8284728201-2">%</span><span class="nc" data-group-id="8284728201-2">Dealcloud.Management.Proxy</span><span class="p" data-group-id="8284728201-2">{</span><span class="ss">proxyUserId</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">userIds</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8284728201-3">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="8284728201-3">]</span><span class="p" data-group-id="8284728201-2">}</span><span class="p">,</span><span class="w"> </span><span class="nc">Dealcloud.Auth</span><span class="p" data-group-id="8284728201-1">)</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="create_users/2">
+
+  <div class="detail-header">
+    <a href="#create_users/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create_users(body, config)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">create_users([User], Dealcloud.Auth) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+
+      </div>
+
+<p>Takes a list of <code class="inline">Dealcloud.Management.user()</code> and creates them as new</p><h2 id="create_users/2-examples" class="section-heading">
+  <a href="#create_users/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Management</span><span class="o">.</span><span class="n">create_users</span><span class="p" data-group-id="0880243600-1">(</span><span class="p" data-group-id="0880243600-2">[</span><span class="p" data-group-id="0880243600-3">%</span><span class="nc" data-group-id="0880243600-3">User</span><span class="p" data-group-id="0880243600-3">{</span><span class="w"> </span><span class="ss">firstName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;James&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">lastName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;King&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">email</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;kingj@basketball.com&quot;</span><span class="p" data-group-id="0880243600-3">}</span><span class="p" data-group-id="0880243600-2">]</span><span class="p">,</span><span class="w"> </span><span class="nc">Dealcloud.Auth</span><span class="p" data-group-id="0880243600-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="delete_user/2">
@@ -341,7 +613,39 @@ Functions
 
       </div>
 
-<p>See <a href="Dealcloud.Impl.Management.User.html#delete/2"><code class="inline">Dealcloud.Impl.Management.User.delete/2</code></a>.</p>
+<p>Takes a user id and deletes the associated user</p><h2 id="delete_user/2-examples" class="section-heading">
+  <a href="#delete_user/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Management</span><span class="o">.</span><span class="n">delete_users</span><span class="p" data-group-id="4039282472-1">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nc">Dealcloud.Auth</span><span class="p" data-group-id="4039282472-1">)</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="get_by_ids/2">
+
+  <div class="detail-header">
+    <a href="#get_by_ids/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_by_ids(param, config)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">get_by_ids([<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()], Dealcloud.Auth) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+
+      </div>
+
+<p>Takes a list of integers representing the user's Id and returns the users</p><h2 id="get_by_ids/2-examples" class="section-heading">
+  <a href="#get_by_ids/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Management</span><span class="o">.</span><span class="n">get_by_ids</span><span class="p" data-group-id="6291453496-1">(</span><span class="p" data-group-id="6291453496-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="6291453496-2">]</span><span class="p">,</span><span class="w"> </span><span class="nc">Dealcloud.Auth</span><span class="p" data-group-id="6291453496-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="get_user/2">
@@ -361,11 +665,16 @@ Functions
       <h2>Specs</h2>
       <div class="specs">
 
-          <pre translate="no">get_user(Dealcloud.Management.UserQuery, Dealcloud.Auth) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+          <pre translate="no">get_user(Dealcloud.Management.Query, Dealcloud.Auth) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
 
       </div>
 
-<p>These are the user management APIs</p>
+<p>Takes a query containing either the user's email address or a dateTime, attempts to
+find the user or return all user modified since the dateTime provided</p><h2 id="get_user/2-examples" class="section-heading">
+  <a href="#get_user/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Dealcloud.Management</span><span class="o">.</span><span class="n">get_user</span><span class="p" data-group-id="3684632367-1">(</span><span class="p" data-group-id="3684632367-2">%</span><span class="nc" data-group-id="3684632367-2">Dealcloud.Management.Query</span><span class="p" data-group-id="3684632367-2">{</span><span class="ss">email</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;test@email.com&quot;</span><span class="p" data-group-id="3684632367-2">}</span><span class="p">,</span><span class="w"> </span><span class="nc">Dealcloud.Auth</span><span class="p" data-group-id="3684632367-1">)</span></code></pre><p>  or</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Dealcloud.Management</span><span class="o">.</span><span class="n">get_user</span><span class="p" data-group-id="4821521022-1">(</span><span class="p" data-group-id="4821521022-2">%</span><span class="nc" data-group-id="4821521022-2">Dealcloud.Management.Query</span><span class="p" data-group-id="4821521022-2">{</span><span class="ss">ModifiedSince</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2019-07-15T15:53:00.050Z&quot;</span><span class="p" data-group-id="4821521022-2">}</span><span class="p">,</span><span class="w"> </span><span class="nc">Dealcloud.Auth</span><span class="p" data-group-id="4821521022-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="get_user_activity/2">
@@ -389,7 +698,8 @@ Functions
 
       </div>
 
-<p>See <a href="Dealcloud.Impl.Management.Activity.html#post/2"><code class="inline">Dealcloud.Impl.Management.Activity.post/2</code></a>.</p>
+<p>These are the user activity APIs
+  ## Examples</p><pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Management</span><span class="o">.</span><span class="n">get_user_activity</span><span class="p" data-group-id="5452720962-1">(</span><span class="p" data-group-id="5452720962-2">%</span><span class="nc" data-group-id="5452720962-2">Dealcloud.Management.ActivityQuery</span><span class="p" data-group-id="5452720962-2">{</span><span class="p" data-group-id="5452720962-2">}</span><span class="p">,</span><span class="p" data-group-id="5452720962-3">%</span><span class="nc" data-group-id="5452720962-3">Dealcloud.Auth</span><span class="p" data-group-id="5452720962-3">{</span><span class="p" data-group-id="5452720962-3">}</span><span class="p" data-group-id="5452720962-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="get_user_activity/3">
@@ -417,31 +727,8 @@ Functions
 
       </div>
 
-<p>These are the user activity APIs</p>
-  </section>
-</section>
-<section class="detail" id="get_user_by_id/2">
-
-  <div class="detail-header">
-    <a href="#get_user_by_id/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">get_user_by_id(param, config)</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <h2>Specs</h2>
-      <div class="specs">
-
-          <pre translate="no">get_user_by_id(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>() | [<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()], Dealcloud.Auth) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
-
-      </div>
-
-<p>See <a href="Dealcloud.Impl.Management.User.html#get_by_id/2"><code class="inline">Dealcloud.Impl.Management.User.get_by_id/2</code></a>.</p>
+<p>These are the user activity APIs
+  ## Examples</p><pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Management</span><span class="o">.</span><span class="n">get_user_activity</span><span class="p" data-group-id="3108506491-1">(</span><span class="p" data-group-id="3108506491-2">%</span><span class="nc" data-group-id="3108506491-2">Dealcloud.Management.ActivityQuery</span><span class="p" data-group-id="3108506491-2">{</span><span class="p" data-group-id="3108506491-2">}</span><span class="p">,</span><span class="p" data-group-id="3108506491-3">%</span><span class="nc" data-group-id="3108506491-3">Dealcloud.Management.UserQuery</span><span class="p" data-group-id="3108506491-3">{</span><span class="p" data-group-id="3108506491-3">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3108506491-4">%</span><span class="nc" data-group-id="3108506491-4">Dealcloud.Auth</span><span class="p" data-group-id="3108506491-4">{</span><span class="p" data-group-id="3108506491-4">}</span><span class="p" data-group-id="3108506491-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="get_user_group/2">
@@ -465,7 +752,11 @@ Functions
 
       </div>
 
-<p>These are the user group APIs</p>
+<p>These are the user group APIs</p><h2 id="get_user_group/2-examples" class="section-heading">
+  <a href="#get_user_group/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Management</span><span class="o">.</span><span class="n">get_user_group</span><span class="p" data-group-id="8210991370-1">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nc">Dealcloud.Auth</span><span class="p" data-group-id="8210991370-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="get_user_groups/1">
@@ -489,7 +780,11 @@ Functions
 
       </div>
 
-<p>See <a href="Dealcloud.Impl.Management.Group.html#groups/1"><code class="inline">Dealcloud.Impl.Management.Group.groups/1</code></a>.</p>
+<p>These are the user group APIs</p><h2 id="get_user_groups/1-examples" class="section-heading">
+  <a href="#get_user_groups/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Management</span><span class="o">.</span><span class="n">get_user_groups</span><span class="p" data-group-id="3768338397-1">(</span><span class="nc">Dealcloud.Auth</span><span class="p" data-group-id="3768338397-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="get_user_license/2">
@@ -509,11 +804,15 @@ Functions
       <h2>Specs</h2>
       <div class="specs">
 
-          <pre translate="no">get_user_license(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), <a href="Dealcloud.Auth.html#t:t/0">Dealcloud.Auth.t</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+          <pre translate="no">get_user_license(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), Dealcloud.Auth) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
 
       </div>
 
-<p>These are the user license APIs</p>
+<p>These are the user license APIs</p><h2 id="get_user_license/2-examples" class="section-heading">
+  <a href="#get_user_license/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Management</span><span class="o">.</span><span class="n">get_user_license</span><span class="p" data-group-id="6493458924-1">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nc">Dealcloud.Auth</span><span class="p" data-group-id="6493458924-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="get_user_proxy/2">
@@ -537,7 +836,12 @@ Functions
 
       </div>
 
-<p>These are the user proxy APIs</p>
+<p>These are the user proxy APIs</p><p>There are two ways to query for proxies, you can search by user or by the proxy</p><h2 id="get_user_proxy/2-examples" class="section-heading">
+  <a href="#get_user_proxy/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Management</span><span class="o">.</span><span class="n">get_user_proxy</span><span class="p" data-group-id="1507850045-1">(</span><span class="p" data-group-id="1507850045-2">%</span><span class="nc" data-group-id="1507850045-2">Dealcloud.Management.ProxyQuery</span><span class="p" data-group-id="1507850045-2">{</span><span class="ss">proxyQuery</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;test@user.com&quot;</span><span class="p" data-group-id="1507850045-2">}</span><span class="p">,</span><span class="w"> </span><span class="nc">Dealcloud.Auth</span><span class="p" data-group-id="1507850045-1">)</span><span class="w">
+</span><span class="nc">Dealcloud.Management</span><span class="o">.</span><span class="n">get_user_proxy</span><span class="p" data-group-id="1507850045-3">(</span><span class="p" data-group-id="1507850045-4">%</span><span class="nc" data-group-id="1507850045-4">Dealcloud.Management.ProxyQuery</span><span class="p" data-group-id="1507850045-4">{</span><span class="ss">userQuery</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;test@user.com&quot;</span><span class="p" data-group-id="1507850045-4">}</span><span class="p">,</span><span class="w"> </span><span class="nc">Dealcloud.Auth</span><span class="p" data-group-id="1507850045-3">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="get_users_license/1">
@@ -554,7 +858,18 @@ Functions
 
   <section class="docstring">
 
-<p>See <a href="Dealcloud.Impl.Management.License.html#licenses/1"><code class="inline">Dealcloud.Impl.Management.License.licenses/1</code></a>.</p>
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">get_users_license(Dealcloud.Auth) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+
+      </div>
+
+<p>Get all licenses</p><h2 id="get_users_license/1-examples" class="section-heading">
+  <a href="#get_users_license/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Management</span><span class="o">.</span><span class="n">get_user_license</span><span class="p" data-group-id="9331425232-1">(</span><span class="nc">Dealcloud.Auth</span><span class="p" data-group-id="9331425232-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="get_users_license/2">
@@ -578,7 +893,11 @@ Functions
 
       </div>
 
-<p>See <a href="Dealcloud.Impl.Management.License.html#licenses/2"><code class="inline">Dealcloud.Impl.Management.License.licenses/2</code></a>.</p>
+<p>Get licenses for multiple users</p><h2 id="get_users_license/2-examples" class="section-heading">
+  <a href="#get_users_license/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Management</span><span class="o">.</span><span class="n">get_users_license</span><span class="p" data-group-id="4959095216-1">(</span><span class="p" data-group-id="4959095216-2">%</span><span class="nc" data-group-id="4959095216-2">Dealcloud.Management.Query</span><span class="p" data-group-id="4959095216-2">{</span><span class="ss">isBillable</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="4959095216-2">}</span><span class="p">,</span><span class="w"> </span><span class="nc">Dealcloud.Auth</span><span class="p" data-group-id="4959095216-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="update_user/2">
@@ -602,7 +921,11 @@ Functions
 
       </div>
 
-<p>See <a href="Dealcloud.Impl.Management.User.html#put/2"><code class="inline">Dealcloud.Impl.Management.User.put/2</code></a>.</p>
+<p>Takes a list of <code class="inline">Dealcloud.Management.user()</code> and updates them</p><h2 id="update_user/2-examples" class="section-heading">
+  <a href="#update_user/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Management</span><span class="o">.</span><span class="n">update_users</span><span class="p" data-group-id="8202330029-1">(</span><span class="p" data-group-id="8202330029-2">[</span><span class="p" data-group-id="8202330029-3">%</span><span class="nc" data-group-id="8202330029-3">User</span><span class="p" data-group-id="8202330029-3">{</span><span class="w"> </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">firstName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;James&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">lastName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;King&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">email</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;kingj@basketball.com&quot;</span><span class="p" data-group-id="8202330029-3">}</span><span class="p" data-group-id="8202330029-2">]</span><span class="p">,</span><span class="w"> </span><span class="nc">Dealcloud.Auth</span><span class="p" data-group-id="8202330029-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="update_user_license/2">
@@ -626,7 +949,39 @@ Functions
 
       </div>
 
-<p>See <a href="Dealcloud.Impl.Management.License.html#put/2"><code class="inline">Dealcloud.Impl.Management.License.put/2</code></a>.</p>
+<p>Update licenses</p><h2 id="update_user_license/2-examples" class="section-heading">
+  <a href="#update_user_license/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Management</span><span class="o">.</span><span class="n">update_user_license</span><span class="p" data-group-id="4312684713-1">(</span><span class="p" data-group-id="4312684713-2">%</span><span class="nc" data-group-id="4312684713-2">Dealcloud.Management.License</span><span class="p" data-group-id="4312684713-2">{</span><span class="ss">userId</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">licenseType</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="4312684713-2">}</span><span class="p">,</span><span class="w"> </span><span class="nc">Dealcloud.Auth</span><span class="p" data-group-id="4312684713-1">)</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="user_get_by_id/2">
+
+  <div class="detail-header">
+    <a href="#user_get_by_id/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">user_get_by_id(param, config)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">user_get_by_id(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), Dealcloud.Auth) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+
+      </div>
+
+<p>Takes a integer representing the user's Id and returns the user</p><h2 id="user_get_by_id/2-examples" class="section-heading">
+  <a href="#user_get_by_id/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Dealcloud.Management</span><span class="o">.</span><span class="n">user_get_by_id</span><span class="p" data-group-id="1926561249-1">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nc">Dealcloud.Auth</span><span class="p" data-group-id="1926561249-1">)</span></code></pre>
   </section>
 </section>
 

@@ -1,4 +1,5 @@
 defmodule Dealcloud.Management.Query do
+  @moduledoc false
   @type t :: %__MODULE__{
           modifiedSince: Date.t(),
           email: String.t(),

@@ -1,4 +1,5 @@
 defmodule Dealcloud.Impl.Management.Activity do
+  @moduledoc false
   alias Dealcloud.Impl.Management
 
   @name "activity"

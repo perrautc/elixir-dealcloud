@@ -6,7 +6,7 @@ defmodule Dealcloud.Schema do
   what's currently implemented
   """
   alias Dealcloud.Impl.Schema
-  ################################################################
+
   @doc """
   These are the system Information APIs
 
@@ -57,7 +57,6 @@ defmodule Dealcloud.Schema do
   @spec get_time_zone(Dealcloud.Auth.t()) :: any
   defdelegate get_time_zone(config), to: Schema.TimeZones, as: :get
 
-  ################################################################
   @doc """
   These are the site Information APIs
 
@@ -101,7 +100,7 @@ defmodule Dealcloud.Schema do
 
   Schema.get_field(3, %Auth{})
   """
-  @spec get_field(integer, Dealcloud.Auth) :: any
+  @spec get_field(integer, Dealcloud.Auth.t()) :: any
   defdelegate get_field(fieldId, config), to: Schema.Fields
 
   @doc """
@@ -109,7 +108,7 @@ defmodule Dealcloud.Schema do
 
   Schema.get_fields([3,4,5], %Auth{})
   """
-  @spec get_fields(list(integer), Dealcloud.Auth) :: any
+  @spec get_fields(list(integer), Dealcloud.Auth.t()) :: any
   defdelegate get_fields(fields, config), to: Schema.Fields
 
   @doc """

@@ -1,4 +1,5 @@
 defmodule Dealcloud.Impl.Schema.FieldTypes do
+  @moduledoc false
   @name "fieldtypes"
   alias Dealcloud.Impl.Schema
   @spec get(Dealcloud.Auth.t()) :: any

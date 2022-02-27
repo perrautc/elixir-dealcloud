@@ -1,4 +1,5 @@
 defmodule Dealcloud.Impl.Management.Proxy do
+  @moduledoc false
   alias Dealcloud.Auth
   alias Dealcloud.Impl.Management
 

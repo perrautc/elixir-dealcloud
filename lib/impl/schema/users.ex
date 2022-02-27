@@ -1,4 +1,5 @@
 defmodule Dealcloud.Impl.Schema.Users do
+  @moduledoc false
   @name "users"
   alias Dealcloud.Impl.Schema
   @spec get(Dealcloud.Auth.t()) :: any

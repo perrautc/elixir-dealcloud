@@ -1,4 +1,5 @@
 defmodule Dealcloud.Impl.Management.Group do
+  @moduledoc false
   alias Dealcloud.Impl.Management
   alias Dealcloud.Management.{Query}
   alias Dealcloud.Auth

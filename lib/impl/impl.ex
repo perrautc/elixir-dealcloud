@@ -1,7 +1,5 @@
 defmodule Dealcloud.Impl do
-  @moduledoc """
-  Implementation details, utility functions
-  """
+  @moduledoc false
   defstruct [:requestType, :url, :config, params: %{}, body: [], data: []]
 
   @type t :: %__MODULE__{

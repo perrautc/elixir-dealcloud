@@ -1,4 +1,5 @@
 defmodule Dealcloud.Management.User do
+  @moduledoc false
   @type t :: %__MODULE__{
           createdDate: Date.t(),
           createdBy: integer,

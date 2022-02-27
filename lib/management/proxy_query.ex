@@ -1,4 +1,5 @@
 defmodule Dealcloud.Management.ProxyQuery do
+  @moduledoc false
   @type t :: %__MODULE__{
           proxyQuery: String.t(),
           userQuery: String.t(),

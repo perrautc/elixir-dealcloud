@@ -1,4 +1,5 @@
 defmodule Dealcloud.Management.ActivityQuery do
+  @moduledoc false
   @type t :: %__MODULE__{
           userIds: list,
           dateFrom: Date.t(),
