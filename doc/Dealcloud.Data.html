@@ -410,7 +410,7 @@ entry this will always return the value at time of deletion.</p><h2 id="get_hist
   <a href="#get_historical/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
   Examples
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Data</span><span class="o">.</span><span class="n">get_historical</span><span class="p" data-group-id="8587406089-1">(</span><span class="p" data-group-id="8587406089-1">)</span></code></pre>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Data</span><span class="o">.</span><span class="n">get_historical</span><span class="p" data-group-id="3284857527-1">(</span><span class="p" data-group-id="3284857527-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="get_view_details/4">
@@ -443,7 +443,7 @@ entry this will always return the value at time of deletion.</p><h2 id="get_hist
   <a href="#get_view_details/4-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
   Examples
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Data</span><span class="o">.</span><span class="n">get_view_details</span><span class="p" data-group-id="7853339941-1">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7853339941-2">[</span><span class="p" data-group-id="7853339941-2">]</span><span class="p">,</span><span class="w"> </span><span class="n">query</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7853339941-3">%</span><span class="nc" data-group-id="7853339941-3">Dealcloud.Auth</span><span class="p" data-group-id="7853339941-3">{</span><span class="p" data-group-id="7853339941-3">}</span><span class="p" data-group-id="7853339941-1">)</span></code></pre>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Data</span><span class="o">.</span><span class="n">get_view_details</span><span class="p" data-group-id="2249598865-1">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2249598865-2">[</span><span class="p" data-group-id="2249598865-2">]</span><span class="p">,</span><span class="w"> </span><span class="n">query</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2249598865-3">%</span><span class="nc" data-group-id="2249598865-3">Dealcloud.Auth</span><span class="p" data-group-id="2249598865-3">{</span><span class="p" data-group-id="2249598865-3">}</span><span class="p" data-group-id="2249598865-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="get_views/2">
@@ -470,7 +470,11 @@ entry this will always return the value at time of deletion.</p><h2 id="get_hist
 
       </div>
 
-<p>View APIs</p>
+<p>View APIs</p><h2 id="get_views/2-examples" class="section-heading">
+  <a href="#get_views/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Data</span><span class="o">.</span><span class="n">get_views</span><span class="p" data-group-id="4336755744-1">(</span><span class="p" data-group-id="4336755744-2">%</span><span class="nc" data-group-id="4336755744-2">Dealcloud.Data.Query</span><span class="p" data-group-id="4336755744-2">{</span><span class="p" data-group-id="4336755744-2">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4336755744-3">%</span><span class="nc" data-group-id="4336755744-3">Dealcloud.Auth</span><span class="p" data-group-id="4336755744-3">{</span><span class="p" data-group-id="4336755744-3">}</span><span class="p" data-group-id="4336755744-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="merge/3">
@@ -499,8 +503,8 @@ You're able to perform up to 100 mergest per call</p><p>Takes the entryType as a
 Take a list of merge Requests
 Takes query params, must specify if it should overrite blank values
 Takes authentication</p><p>##Examples</p><pre><code class="makeup elixir" translate="no"><span class="kn">alias</span><span class="w"> </span><span class="nc">Dealcloud.Impl.Data.Merge</span><span class="w">
-</span><span class="n">mergeRequest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="2850540565-1">%</span><span class="nc" data-group-id="2850540565-1">Dealcloud.Data.Merge</span><span class="p" data-group-id="2850540565-1">{</span><span class="ss">entryId</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">mergeEntries</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2850540565-2">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="2850540565-2">]</span><span class="p" data-group-id="2850540565-1">}</span><span class="w">
-</span><span class="nc">Merge</span><span class="o">.</span><span class="n">post</span><span class="p" data-group-id="2850540565-3">(</span><span class="mi">2014</span><span class="p">,</span><span class="p" data-group-id="2850540565-4">[</span><span class="n">mergeRequest</span><span class="p" data-group-id="2850540565-4">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2850540565-5">%</span><span class="nc" data-group-id="2850540565-5">Dealcloud.Data.Query</span><span class="p" data-group-id="2850540565-5">{</span><span class="ss">overwriteEmptyValues</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="2850540565-5">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2850540565-6">%</span><span class="nc" data-group-id="2850540565-6">Auth</span><span class="p" data-group-id="2850540565-6">{</span><span class="p" data-group-id="2850540565-6">}</span><span class="p" data-group-id="2850540565-3">)</span><span class="w">
+</span><span class="n">mergeRequest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="8831561703-1">%</span><span class="nc" data-group-id="8831561703-1">Dealcloud.Data.Merge</span><span class="p" data-group-id="8831561703-1">{</span><span class="ss">entryId</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">mergeEntries</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8831561703-2">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="8831561703-2">]</span><span class="p" data-group-id="8831561703-1">}</span><span class="w">
+</span><span class="nc">Merge</span><span class="o">.</span><span class="n">post</span><span class="p" data-group-id="8831561703-3">(</span><span class="mi">2014</span><span class="p">,</span><span class="p" data-group-id="8831561703-4">[</span><span class="n">mergeRequest</span><span class="p" data-group-id="8831561703-4">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8831561703-5">%</span><span class="nc" data-group-id="8831561703-5">Dealcloud.Data.Query</span><span class="p" data-group-id="8831561703-5">{</span><span class="ss">overwriteEmptyValues</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="8831561703-5">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8831561703-6">%</span><span class="nc" data-group-id="8831561703-6">Auth</span><span class="p" data-group-id="8831561703-6">{</span><span class="p" data-group-id="8831561703-6">}</span><span class="p" data-group-id="8831561703-3">)</span><span class="w">
 </span><span class="ss">:ok</span></code></pre>
   </section>
 </section>

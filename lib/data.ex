@@ -36,6 +36,9 @@ defmodule Dealcloud.Data do
 
   @doc """
   View APIs
+
+  ## Examples
+      Dealcloud.Data.get_views(%Dealcloud.Data.Query{}, %Dealcloud.Auth{})
   """
   @spec get_views(
           query(),
