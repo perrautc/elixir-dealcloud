@@ -1,17 +1,16 @@
 defmodule Dealcloud.Impl.Data.Merge do
+  @moduledoc false
   alias Dealcloud.Impl.Data
   @name "merge"
-  @moduledoc """
+  @doc """
   This contains the functions for merging 2 or more entries.
   You're able to perform up to 100 mergest per call
-  """
-  @doc """
   Takes the entryType as a integer
   Take a list of merge Requests
   Takes query params, must specify if it should overrite blank values
   Takes authentication
 
-      ##Examples
+  ##Examples
       iex> alias Dealcloud.Impl.Data.Merge
       iex> mergeRequest = %Dealcloud.Data.Merge{entryId: 1, mergeEntries: [1, 2, 3]}
       iex> Merge.post(2014,[mergeRequest], %Dealcloud.Data.Query{overwriteEmptyValues: true}, %Auth{})

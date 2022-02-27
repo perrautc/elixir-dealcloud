@@ -1,10 +1,8 @@
 defmodule Dealcloud.Impl.Data.Utility do
   alias Dealcloud.Impl.Data.EntryData
 
-  @moduledoc """
-  EntryData contains the API to get entries as cells
-  """
-  @spec get(list(Dealcloud.Data.Record), map(), Dealcloud.Auth.t()) :: map
+  @moduledoc false
+  @spec get(list(Dealcloud.Data.Record), Dealcloud.Data.Query, Dealcloud.Auth.t()) :: map
   def get(entries, params, config) do
     entries
     |> create_batches()
@@ -33,7 +31,7 @@ defmodule Dealcloud.Impl.Data.Utility do
     |> Enum.group_by(fn x -> x.entryId end)
   end
 
-  @spec get(list(integer), list(integer), map, Dealcloud.Auth.t()) :: map
+  @spec get(list(integer), list(integer), Dealcloud.Data.Query, Dealcloud.Auth.t()) :: map
   def get(entryIds, fieldIds, params, config) do
     generate_entries_fields(entryIds, fieldIds)
     |> get(params, config)

@@ -1,4 +1,5 @@
 defmodule Dealcloud.Data.PostQuery do
+  @moduledoc false
   defstruct query: nil,
             fields: [],
             limit: 100,

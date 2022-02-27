@@ -1,4 +1,5 @@
 defmodule Dealcloud.Data.Record do
+  @moduledoc false
   defstruct entryId: 0,
             fieldId: 0,
             currencyCode: nil,

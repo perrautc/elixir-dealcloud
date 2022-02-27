@@ -1,4 +1,5 @@
 defmodule Dealcloud.Impl.Auth do
+  @moduledoc false
   alias Dealcloud.Auth
 
   @spec token(Dealcloud.Auth.t()) :: Dealcloud.Auth.t()

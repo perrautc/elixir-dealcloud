@@ -1,4 +1,5 @@
 defmodule Dealcloud.Impl.Data.RowData do
+  @moduledoc false
   alias Dealcloud.Impl.Data
   @name "rows"
   @spec get(binary | integer, Dealcloud.Data.Query, Dealcloud.Auth) :: any

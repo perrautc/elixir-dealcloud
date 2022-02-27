@@ -10,7 +10,7 @@
     <title>Dealcloud.Data.Cells — dealcloud v0.2.0</title>
     <link rel="stylesheet" href="dist/elixir-a816d167216329cc463d.css" />
 
-    <script src="dist/sidebar_items-dcbd2a029d.js"></script>
+    <script src="dist/sidebar_items-8259ec7dff.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -108,6 +108,37 @@ Both Requests and Responses are sent as arrays of [{EntryId: 1, FieldId: 1, Valu
       Summary
     </h1>
 
+  <div class="summary-types summary">
+    <h2>
+      <a href="#types">Types</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:filter/0" translate="no">filter()</a>
+
+        </div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:modified/0" translate="no">modified()</a>
+
+        </div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:record/0" translate="no">record()</a>
+
+        </div>
+
+      </div>
+
+  </div>
+
   <div class="summary-functions summary">
     <h2>
       <a href="#functions">Functions</a>
@@ -119,7 +150,42 @@ Both Requests and Responses are sent as arrays of [{EntryId: 1, FieldId: 1, Valu
 
         </div>
 
-          <div class="summary-synopsis"><p>See <a href="Dealcloud.Impl.Data.Utility.html#all_fields/3"><code class="inline">Dealcloud.Impl.Data.Utility.all_fields/3</code></a>.</p></div>
+          <div class="summary-synopsis"><p>Returns a list of records and all field values for the requested entries for a given entry type</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#batch_create/3" translate="no">batch_create(type, entries, config)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Just like <a href="#create/3"><code class="inline">Dealcloud.Data.Cells.create/3</code></a>, except can handle requests of any size.
+Creates new entries and Returns a list record field values for the created entries
+entryId must be negative integer</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#batch_get/3" translate="no">batch_get(entries, params, config)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Just like <a href="#get/3"><code class="inline">Dealcloud.Data.Cells.get/3</code></a>, except can handle requests of any size.
+Returns a list record field values for the entries and fields requested</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#batch_update/3" translate="no">batch_update(type, entries, config)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Just like <a href="#update/3"><code class="inline">Dealcloud.Data.Cells.update/3</code></a>, except can handle requests of any size.
+Updates entries and Returns a list record field values for the created entries
+entryId must be positive integer</p></div>
 
       </div>
 
@@ -129,7 +195,8 @@ Both Requests and Responses are sent as arrays of [{EntryId: 1, FieldId: 1, Valu
 
         </div>
 
-          <div class="summary-synopsis"><p>See <a href="Dealcloud.Impl.Data.EntryData.html#post/3"><code class="inline">Dealcloud.Impl.Data.EntryData.post/3</code></a>.</p></div>
+          <div class="summary-synopsis"><p>Creates new entries and Returns a list record field values for the created entries
+entryId must be negative integer</p></div>
 
       </div>
 
@@ -139,7 +206,7 @@ Both Requests and Responses are sent as arrays of [{EntryId: 1, FieldId: 1, Valu
 
         </div>
 
-          <div class="summary-synopsis"><p>See <a href="Dealcloud.Impl.Data.EntryData.html#get/3"><code class="inline">Dealcloud.Impl.Data.EntryData.get/3</code></a>.</p></div>
+          <div class="summary-synopsis"><p>Returns a list record field values for the entries and fields requested</p></div>
 
       </div>
 
@@ -149,17 +216,7 @@ Both Requests and Responses are sent as arrays of [{EntryId: 1, FieldId: 1, Valu
 
         </div>
 
-          <div class="summary-synopsis"><p>See <a href="Dealcloud.Impl.Data.Utility.html#all_entries/2"><code class="inline">Dealcloud.Impl.Data.Utility.all_entries/2</code></a>.</p></div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#get_batch/3" translate="no">get_batch(entries, params, config)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>See <a href="Dealcloud.Impl.Data.Utility.html#get/3"><code class="inline">Dealcloud.Impl.Data.Utility.get/3</code></a>.</p></div>
+          <div class="summary-synopsis"><p>Returns a list of all records and all field values for a given entry type</p></div>
 
       </div>
 
@@ -169,7 +226,7 @@ Both Requests and Responses are sent as arrays of [{EntryId: 1, FieldId: 1, Valu
 
         </div>
 
-          <div class="summary-synopsis"><p>See <a href="Dealcloud.Impl.Data.EntryData.html#filter_entries/3"><code class="inline">Dealcloud.Impl.Data.EntryData.filter_entries/3</code></a>.</p></div>
+          <div class="summary-synopsis"><p>Returns a list of only entry ids for all records of a given entry type</p></div>
 
       </div>
 
@@ -179,7 +236,7 @@ Both Requests and Responses are sent as arrays of [{EntryId: 1, FieldId: 1, Valu
 
         </div>
 
-          <div class="summary-synopsis"><p>See <a href="Dealcloud.Impl.Data.EntryData.html#get_entries_ids/2"><code class="inline">Dealcloud.Impl.Data.EntryData.get_entries_ids/2</code></a>.</p></div>
+          <div class="summary-synopsis"><p>Returns a list of only entry ids for all records of a given entry type</p></div>
 
       </div>
 
@@ -189,7 +246,7 @@ Both Requests and Responses are sent as arrays of [{EntryId: 1, FieldId: 1, Valu
 
         </div>
 
-          <div class="summary-synopsis"><p>See <a href="Dealcloud.Impl.Data.EntryData.html#get_entries/2"><code class="inline">Dealcloud.Impl.Data.EntryData.get_entries/2</code></a>.</p></div>
+          <div class="summary-synopsis"><p>Returns name and entry ids for all records of a given entry type</p></div>
 
       </div>
 
@@ -199,7 +256,7 @@ Both Requests and Responses are sent as arrays of [{EntryId: 1, FieldId: 1, Valu
 
         </div>
 
-          <div class="summary-synopsis"><p>See <a href="Dealcloud.Impl.Data.EntryData.html#get_modified_entries/3"><code class="inline">Dealcloud.Impl.Data.EntryData.get_modified_entries/3</code></a>.</p></div>
+          <div class="summary-synopsis"><p>Returns a list of name and entry ids for entries modified since the provided DateTime</p></div>
 
       </div>
 
@@ -209,7 +266,8 @@ Both Requests and Responses are sent as arrays of [{EntryId: 1, FieldId: 1, Valu
 
         </div>
 
-          <div class="summary-synopsis"><p>See <a href="Dealcloud.Impl.Data.EntryData.html#put/3"><code class="inline">Dealcloud.Impl.Data.EntryData.put/3</code></a>.</p></div>
+          <div class="summary-synopsis"><p>Updates entries and Returns a list record field values for the created entries
+entryId must be positive integer</p></div>
 
       </div>
 
@@ -217,6 +275,104 @@ Both Requests and Responses are sent as arrays of [{EntryId: 1, FieldId: 1, Valu
 
   </section>
 
+
+  <section id="types" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#types">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Types
+    </h1>
+    <div class="types-list">
+<section class="detail" id="t:filter/0">
+
+  <div class="detail-header">
+    <a href="#t:filter/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">filter()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">filter() :: %Dealcloud.Data.Filter{
+  currencyCode: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  fieldId: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  filterOperation: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  value: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  valueTo: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
+}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:modified/0">
+
+  <div class="detail-header">
+    <a href="#t:modified/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">modified()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">modified() :: %Dealcloud.Data.ModifiedQuery{modifiedSince: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:record/0">
+
+  <div class="detail-header">
+    <a href="#t:record/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">record()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">record() :: %Dealcloud.Data.Record{
+  currencyCode: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  entryId: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  fieldId: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  ignoreNearDups: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  rowId: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  value: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
+}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+
+    </div>
+  </section>
 
   <section id="functions" class="details-list">
     <h1 class="section-heading">
@@ -241,7 +397,120 @@ Functions
 
   <section class="docstring">
 
-<p>See <a href="Dealcloud.Impl.Data.Utility.html#all_fields/3"><code class="inline">Dealcloud.Impl.Data.Utility.all_fields/3</code></a>.</p>
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">all_fields(<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), [<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()], <a href="Dealcloud.Auth.html#t:t/0">Dealcloud.Auth.t</a>()) :: [
+  Dealcloud.Data.Record
+]</pre>
+
+      </div>
+
+<p>Returns a list of records and all field values for the requested entries for a given entry type</p><h2 id="all_fields/3-examples" class="section-heading">
+  <a href="#all_fields/3-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Data.Cells</span><span class="o">.</span><span class="n">all_fields</span><span class="p" data-group-id="6674881764-1">(</span><span class="mi">2011</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6674881764-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="6674881764-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6674881764-3">%</span><span class="nc" data-group-id="6674881764-3">Dealcloud.Auth</span><span class="p" data-group-id="6674881764-3">{</span><span class="p" data-group-id="6674881764-3">}</span><span class="p" data-group-id="6674881764-1">)</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="batch_create/3">
+
+  <div class="detail-header">
+    <a href="#batch_create/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">batch_create(type, entries, config)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">batch_create(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), [Dealcloud.Data.Record], <a href="Dealcloud.Auth.html#t:t/0">Dealcloud.Auth.t</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()</pre>
+
+      </div>
+
+<p>Just like <a href="#create/3"><code class="inline">Dealcloud.Data.Cells.create/3</code></a>, except can handle requests of any size.
+Creates new entries and Returns a list record field values for the created entries
+entryId must be negative integer</p><h2 id="batch_create/3-examples" class="section-heading">
+  <a href="#batch_create/3-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="n">field1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="8156261720-1">%</span><span class="nc" data-group-id="8156261720-1">Dealcloud.Data.Record</span><span class="p" data-group-id="8156261720-1">{</span><span class="ss">fieldId</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">entryId</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p" data-group-id="8156261720-1">}</span><span class="w">
+</span><span class="n">field2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="8156261720-2">%</span><span class="nc" data-group-id="8156261720-2">Dealcloud.Data.Record</span><span class="p" data-group-id="8156261720-2">{</span><span class="ss">fieldId</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="ss">entryId</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">value</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p" data-group-id="8156261720-2">}</span><span class="w">
+</span><span class="n">entries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="8156261720-3">[</span><span class="n">field1</span><span class="p">,</span><span class="w"> </span><span class="n">field2</span><span class="p" data-group-id="8156261720-3">]</span><span class="w">
+</span><span class="nc">Dealcloud.Data.Cells</span><span class="o">.</span><span class="n">create</span><span class="p" data-group-id="8156261720-4">(</span><span class="mi">2011</span><span class="p">,</span><span class="w"> </span><span class="n">entries</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8156261720-5">%</span><span class="nc" data-group-id="8156261720-5">Dealcloud.Auth</span><span class="p" data-group-id="8156261720-5">{</span><span class="p" data-group-id="8156261720-5">}</span><span class="p" data-group-id="8156261720-4">)</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="batch_get/3">
+
+  <div class="detail-header">
+    <a href="#batch_get/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">batch_get(entries, params, config)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">batch_get([Dealcloud.Data.Record], Dealcloud.Data.Query, <a href="Dealcloud.Auth.html#t:t/0">Dealcloud.Auth.t</a>()) ::
+  <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()</pre>
+
+      </div>
+
+<p>Just like <a href="#get/3"><code class="inline">Dealcloud.Data.Cells.get/3</code></a>, except can handle requests of any size.
+Returns a list record field values for the entries and fields requested</p><h2 id="batch_get/3-examples" class="section-heading">
+  <a href="#batch_get/3-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="n">field1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="8014593332-1">%</span><span class="nc" data-group-id="8014593332-1">Dealcloud.Data.Record</span><span class="p" data-group-id="8014593332-1">{</span><span class="ss">fieldId</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">entryId</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="8014593332-1">}</span><span class="w">
+</span><span class="n">field2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="8014593332-2">%</span><span class="nc" data-group-id="8014593332-2">Dealcloud.Data.Record</span><span class="p" data-group-id="8014593332-2">{</span><span class="ss">fieldId</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="ss">entryId</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="8014593332-2">}</span><span class="w">
+</span><span class="n">entries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="8014593332-3">[</span><span class="n">field1</span><span class="p">,</span><span class="w"> </span><span class="n">field2</span><span class="p" data-group-id="8014593332-3">]</span><span class="w">
+</span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="8014593332-4">%</span><span class="nc" data-group-id="8014593332-4">Dealcloud.Data.Query</span><span class="p" data-group-id="8014593332-4">{</span><span class="ss">wrapIntoArrays</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="8014593332-4">}</span><span class="w">
+</span><span class="nc">Dealcloud.Data.Cells</span><span class="o">.</span><span class="n">batch_get</span><span class="p" data-group-id="8014593332-5">(</span><span class="n">entries</span><span class="p">,</span><span class="w"> </span><span class="n">query</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8014593332-6">%</span><span class="nc" data-group-id="8014593332-6">Dealcloud.Auth</span><span class="p" data-group-id="8014593332-6">{</span><span class="p" data-group-id="8014593332-6">}</span><span class="p" data-group-id="8014593332-5">)</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="batch_update/3">
+
+  <div class="detail-header">
+    <a href="#batch_update/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">batch_update(type, entries, config)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">batch_update(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), [Dealcloud.Data.Record], <a href="Dealcloud.Auth.html#t:t/0">Dealcloud.Auth.t</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()</pre>
+
+      </div>
+
+<p>Just like <a href="#update/3"><code class="inline">Dealcloud.Data.Cells.update/3</code></a>, except can handle requests of any size.
+Updates entries and Returns a list record field values for the created entries
+entryId must be positive integer</p><h2 id="batch_update/3-examples" class="section-heading">
+  <a href="#batch_update/3-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="n">field1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="2025634234-1">%</span><span class="nc" data-group-id="2025634234-1">Dealcloud.Data.Record</span><span class="p" data-group-id="2025634234-1">{</span><span class="ss">fieldId</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">entryId</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p" data-group-id="2025634234-1">}</span><span class="w">
+</span><span class="n">field2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="2025634234-2">%</span><span class="nc" data-group-id="2025634234-2">Dealcloud.Data.Record</span><span class="p" data-group-id="2025634234-2">{</span><span class="ss">fieldId</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="ss">entryId</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">value</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p" data-group-id="2025634234-2">}</span><span class="w">
+</span><span class="n">entries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="2025634234-3">[</span><span class="n">field1</span><span class="p">,</span><span class="w"> </span><span class="n">field2</span><span class="p" data-group-id="2025634234-3">]</span><span class="w">
+</span><span class="nc">Dealcloud.Data.Cells</span><span class="o">.</span><span class="n">create</span><span class="p" data-group-id="2025634234-4">(</span><span class="mi">2011</span><span class="p">,</span><span class="w"> </span><span class="n">entries</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2025634234-5">%</span><span class="nc" data-group-id="2025634234-5">Dealcloud.Auth</span><span class="p" data-group-id="2025634234-5">{</span><span class="p" data-group-id="2025634234-5">}</span><span class="p" data-group-id="2025634234-4">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="create/3">
@@ -258,7 +527,22 @@ Functions
 
   <section class="docstring">
 
-<p>See <a href="Dealcloud.Impl.Data.EntryData.html#post/3"><code class="inline">Dealcloud.Impl.Data.EntryData.post/3</code></a>.</p>
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">create(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), [Dealcloud.Data.Record], Dealcloud.Auth) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+
+      </div>
+
+<p>Creates new entries and Returns a list record field values for the created entries
+entryId must be negative integer</p><h2 id="create/3-examples" class="section-heading">
+  <a href="#create/3-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="n">field1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="2753571203-1">%</span><span class="nc" data-group-id="2753571203-1">Dealcloud.Data.Record</span><span class="p" data-group-id="2753571203-1">{</span><span class="ss">fieldId</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">entryId</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p" data-group-id="2753571203-1">}</span><span class="w">
+</span><span class="n">field2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="2753571203-2">%</span><span class="nc" data-group-id="2753571203-2">Dealcloud.Data.Record</span><span class="p" data-group-id="2753571203-2">{</span><span class="ss">fieldId</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="ss">entryId</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">value</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p" data-group-id="2753571203-2">}</span><span class="w">
+</span><span class="n">entries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="2753571203-3">[</span><span class="n">field1</span><span class="p">,</span><span class="w"> </span><span class="n">field2</span><span class="p" data-group-id="2753571203-3">]</span><span class="w">
+</span><span class="nc">Dealcloud.Data.Cells</span><span class="o">.</span><span class="n">create</span><span class="p" data-group-id="2753571203-4">(</span><span class="mi">2011</span><span class="p">,</span><span class="w"> </span><span class="n">entries</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2753571203-5">%</span><span class="nc" data-group-id="2753571203-5">Dealcloud.Auth</span><span class="p" data-group-id="2753571203-5">{</span><span class="p" data-group-id="2753571203-5">}</span><span class="p" data-group-id="2753571203-4">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="get/3">
@@ -275,7 +559,24 @@ Functions
 
   <section class="docstring">
 
-<p>See <a href="Dealcloud.Impl.Data.EntryData.html#get/3"><code class="inline">Dealcloud.Impl.Data.EntryData.get/3</code></a>.</p>
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">get([Dealcloud.Data.Record], Dealcloud.Data.Query, Dealcloud.Auth) :: [
+  Dealcloud.Data.Record
+]</pre>
+
+      </div>
+
+<p>Returns a list record field values for the entries and fields requested</p><h2 id="get/3-examples" class="section-heading">
+  <a href="#get/3-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="n">field1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="4912867901-1">%</span><span class="nc" data-group-id="4912867901-1">Dealcloud.Data.Record</span><span class="p" data-group-id="4912867901-1">{</span><span class="ss">fieldId</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">entryId</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="4912867901-1">}</span><span class="w">
+</span><span class="n">field2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="4912867901-2">%</span><span class="nc" data-group-id="4912867901-2">Dealcloud.Data.Record</span><span class="p" data-group-id="4912867901-2">{</span><span class="ss">fieldId</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="ss">entryId</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="4912867901-2">}</span><span class="w">
+</span><span class="n">entries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="4912867901-3">[</span><span class="n">field1</span><span class="p">,</span><span class="w"> </span><span class="n">field2</span><span class="p" data-group-id="4912867901-3">]</span><span class="w">
+</span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="4912867901-4">%</span><span class="nc" data-group-id="4912867901-4">Dealcloud.Data.Query</span><span class="p" data-group-id="4912867901-4">{</span><span class="ss">wrapIntoArrays</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="4912867901-4">}</span><span class="w">
+</span><span class="nc">Dealcloud.Data.Cells</span><span class="o">.</span><span class="n">get</span><span class="p" data-group-id="4912867901-5">(</span><span class="n">entries</span><span class="p">,</span><span class="w"> </span><span class="n">query</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4912867901-6">%</span><span class="nc" data-group-id="4912867901-6">Dealcloud.Auth</span><span class="p" data-group-id="4912867901-6">{</span><span class="p" data-group-id="4912867901-6">}</span><span class="p" data-group-id="4912867901-5">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="get_all/2">
@@ -292,24 +593,18 @@ Functions
 
   <section class="docstring">
 
-<p>See <a href="Dealcloud.Impl.Data.Utility.html#all_entries/2"><code class="inline">Dealcloud.Impl.Data.Utility.all_entries/2</code></a>.</p>
-  </section>
-</section>
-<section class="detail" id="get_batch/3">
+      <h2>Specs</h2>
+      <div class="specs">
 
-  <div class="detail-header">
-    <a href="#get_batch/3" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">get_batch(entries, params, config)</h1>
+          <pre translate="no">get_all(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), <a href="Dealcloud.Auth.html#t:t/0">Dealcloud.Auth.t</a>()) :: [Dealcloud.Data.Record]</pre>
 
+      </div>
 
-  </div>
-
-  <section class="docstring">
-
-<p>See <a href="Dealcloud.Impl.Data.Utility.html#get/3"><code class="inline">Dealcloud.Impl.Data.Utility.get/3</code></a>.</p>
+<p>Returns a list of all records and all field values for a given entry type</p><h2 id="get_all/2-examples" class="section-heading">
+  <a href="#get_all/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Data.Cells</span><span class="o">.</span><span class="n">get_all</span><span class="p" data-group-id="6586822373-1">(</span><span class="mi">2011</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6586822373-2">%</span><span class="nc" data-group-id="6586822373-2">Dealcloud.Auth</span><span class="p" data-group-id="6586822373-2">{</span><span class="p" data-group-id="6586822373-2">}</span><span class="p" data-group-id="6586822373-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="get_filtered/3">
@@ -326,7 +621,21 @@ Functions
 
   <section class="docstring">
 
-<p>See <a href="Dealcloud.Impl.Data.EntryData.html#filter_entries/3"><code class="inline">Dealcloud.Impl.Data.EntryData.filter_entries/3</code></a>.</p>
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">get_filtered(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), Dealcloud.Data.Filter, Dealcloud.Auth) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+
+      </div>
+
+<p>Returns a list of only entry ids for all records of a given entry type</p><h2 id="get_filtered/3-examples" class="section-heading">
+  <a href="#get_filtered/3-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="n">filter1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="5249447070-1">%</span><span class="nc" data-group-id="5249447070-1">Dealcloud.Data.Filter</span><span class="p" data-group-id="5249447070-1">{</span><span class="ss">fieldId</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">filterOperation</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="5249447070-1">}</span><span class="w">
+</span><span class="n">filter2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="5249447070-2">%</span><span class="nc" data-group-id="5249447070-2">Dealcloud.Data.Filter</span><span class="p" data-group-id="5249447070-2">{</span><span class="ss">fieldId</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="ss">value</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w"> </span><span class="ss">filterOperation</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="5249447070-2">}</span><span class="w">
+</span><span class="n">filters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="5249447070-3">[</span><span class="n">filter1</span><span class="p">,</span><span class="w"> </span><span class="n">filter2</span><span class="p" data-group-id="5249447070-3">]</span><span class="w">
+</span><span class="nc">Dealcloud.Data.Cells</span><span class="o">.</span><span class="n">get_filtered</span><span class="p" data-group-id="5249447070-4">(</span><span class="mi">2011</span><span class="p">,</span><span class="w"> </span><span class="n">filters</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5249447070-5">%</span><span class="nc" data-group-id="5249447070-5">Dealcloud.Auth</span><span class="p" data-group-id="5249447070-5">{</span><span class="p" data-group-id="5249447070-5">}</span><span class="p" data-group-id="5249447070-4">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="get_ids/2">
@@ -343,7 +652,18 @@ Functions
 
   <section class="docstring">
 
-<p>See <a href="Dealcloud.Impl.Data.EntryData.html#get_entries_ids/2"><code class="inline">Dealcloud.Impl.Data.EntryData.get_entries_ids/2</code></a>.</p>
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">get_ids(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), <a href="Dealcloud.Auth.html#t:t/0">Dealcloud.Auth.t</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+
+      </div>
+
+<p>Returns a list of only entry ids for all records of a given entry type</p><h2 id="get_ids/2-examples" class="section-heading">
+  <a href="#get_ids/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Data.Cells</span><span class="o">.</span><span class="n">get_ids</span><span class="p" data-group-id="1699238997-1">(</span><span class="mi">2011</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1699238997-2">%</span><span class="nc" data-group-id="1699238997-2">Dealcloud.Auth</span><span class="p" data-group-id="1699238997-2">{</span><span class="p" data-group-id="1699238997-2">}</span><span class="p" data-group-id="1699238997-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="get_keys/2">
@@ -360,7 +680,18 @@ Functions
 
   <section class="docstring">
 
-<p>See <a href="Dealcloud.Impl.Data.EntryData.html#get_entries/2"><code class="inline">Dealcloud.Impl.Data.EntryData.get_entries/2</code></a>.</p>
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">get_keys(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), <a href="Dealcloud.Auth.html#t:t/0">Dealcloud.Auth.t</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+
+      </div>
+
+<p>Returns name and entry ids for all records of a given entry type</p><h2 id="get_keys/2-examples" class="section-heading">
+  <a href="#get_keys/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Data.Cells</span><span class="o">.</span><span class="n">get_keys</span><span class="p" data-group-id="8549383808-1">(</span><span class="mi">2011</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8549383808-2">%</span><span class="nc" data-group-id="8549383808-2">Dealcloud.Auth</span><span class="p" data-group-id="8549383808-2">{</span><span class="p" data-group-id="8549383808-2">}</span><span class="p" data-group-id="8549383808-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="get_modified/3">
@@ -377,7 +708,19 @@ Functions
 
   <section class="docstring">
 
-<p>See <a href="Dealcloud.Impl.Data.EntryData.html#get_modified_entries/3"><code class="inline">Dealcloud.Impl.Data.EntryData.get_modified_entries/3</code></a>.</p>
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">get_modified(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), Dealcloud.Data.ModifiedQuery, Dealcloud.Auth) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+
+      </div>
+
+<p>Returns a list of name and entry ids for entries modified since the provided DateTime</p><h2 id="get_modified/3-examples" class="section-heading">
+  <a href="#get_modified/3-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="n">modifiedDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="8102566735-1">%</span><span class="nc" data-group-id="8102566735-1">Dealcloud.Data.ModifiedQuery</span><span class="p" data-group-id="8102566735-1">{</span><span class="w"> </span><span class="ss">modifiedSince</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2019-07-15T15:53:00.050Z&quot;</span><span class="p" data-group-id="8102566735-1">}</span><span class="w">
+</span><span class="nc">Dealcloud.Data.Cells</span><span class="o">.</span><span class="n">get_modified</span><span class="p" data-group-id="8102566735-2">(</span><span class="mi">2011</span><span class="p">,</span><span class="w"> </span><span class="n">modifiedDate</span><span class="p">,</span><span class="p" data-group-id="8102566735-3">%</span><span class="nc" data-group-id="8102566735-3">Dealcloud.Auth</span><span class="p" data-group-id="8102566735-3">{</span><span class="p" data-group-id="8102566735-3">}</span><span class="p" data-group-id="8102566735-2">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="update/3">
@@ -394,7 +737,22 @@ Functions
 
   <section class="docstring">
 
-<p>See <a href="Dealcloud.Impl.Data.EntryData.html#put/3"><code class="inline">Dealcloud.Impl.Data.EntryData.put/3</code></a>.</p>
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">update(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), [Dealcloud.Data.Record], Dealcloud.Auth) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+
+      </div>
+
+<p>Updates entries and Returns a list record field values for the created entries
+entryId must be positive integer</p><h2 id="update/3-examples" class="section-heading">
+  <a href="#update/3-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="n">field1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="5129823149-1">%</span><span class="nc" data-group-id="5129823149-1">Dealcloud.Data.Record</span><span class="p" data-group-id="5129823149-1">{</span><span class="ss">fieldId</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">entryId</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p" data-group-id="5129823149-1">}</span><span class="w">
+</span><span class="n">field2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="5129823149-2">%</span><span class="nc" data-group-id="5129823149-2">Dealcloud.Data.Record</span><span class="p" data-group-id="5129823149-2">{</span><span class="ss">fieldId</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="ss">entryId</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">value</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p" data-group-id="5129823149-2">}</span><span class="w">
+</span><span class="n">entries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="5129823149-3">[</span><span class="n">field1</span><span class="p">,</span><span class="w"> </span><span class="n">field2</span><span class="p" data-group-id="5129823149-3">]</span><span class="w">
+</span><span class="nc">Dealcloud.Data.Cells</span><span class="o">.</span><span class="n">update</span><span class="p" data-group-id="5129823149-4">(</span><span class="mi">2011</span><span class="p">,</span><span class="w"> </span><span class="n">entries</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5129823149-5">%</span><span class="nc" data-group-id="5129823149-5">Dealcloud.Auth</span><span class="p" data-group-id="5129823149-5">{</span><span class="p" data-group-id="5129823149-5">}</span><span class="p" data-group-id="5129823149-4">)</span></code></pre>
   </section>
 </section>
 

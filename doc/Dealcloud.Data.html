@@ -10,7 +10,7 @@
     <title>Dealcloud.Data — dealcloud v0.2.0</title>
     <link rel="stylesheet" href="dist/elixir-a816d167216329cc463d.css" />
 
-    <script src="dist/sidebar_items-dcbd2a029d.js"></script>
+    <script src="dist/sidebar_items-8259ec7dff.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -93,6 +93,13 @@ dealcloud
 </h1>
 
 
+  <section id="moduledoc">
+<p>The Data APIs are used to minipulate records in the site.</p><p>These are the APIs that can be used to perform the following acitons:</p><ol><li>Create Entries</li><li>Update Entries</li><li>Query Entries</li><li>Read Entries</li><li>Delete Entries</li></ol><p>Some of these APIs work with information on a Cells level. These APIs have been grouped under Cells, and
+they accept inputs are Key-Value, and return responses in the same manner.
+The cells APIs have a direct equivalent that are marked as rows. These APIs works with entries as a object.
+Depending on the tooling you're using one of these paradaims may be more beneficial then the other.</p>
+  </section>
+
 
   <section id="summary" class="details-list">
     <h1 class="section-heading">
@@ -102,6 +109,53 @@ dealcloud
       </a>
       Summary
     </h1>
+
+  <div class="summary-types summary">
+    <h2>
+      <a href="#types">Types</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:auth/0" translate="no">auth()</a>
+
+        </div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:history_query/0" translate="no">history_query()</a>
+
+        </div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:merge_request/0" translate="no">merge_request()</a>
+
+        </div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:query/0" translate="no">query()</a>
+
+        </div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:view_filter/0" translate="no">view_filter()</a>
+
+        </div>
+
+      </div>
+
+  </div>
 
   <div class="summary-functions summary">
     <h2>
@@ -114,17 +168,19 @@ dealcloud
 
         </div>
 
-          <div class="summary-synopsis"><p>Historical Data API - Retrives data from in the past</p></div>
+          <div class="summary-synopsis"><p>Historical Data API - Retrives data values from the past. This API can be used to retreive data from deleted entries
+as well as data from fields that have since been updated. We do not keep audits of deleted entries, so for a deleted
+entry this will always return the value at time of deletion.</p></div>
 
       </div>
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#get_view_entries/4" translate="no">get_view_entries(viewId, body, query, config)</a>
+          <a href="#get_view_details/4" translate="no">get_view_details(viewId, body, query, config)</a>
 
         </div>
 
-          <div class="summary-synopsis"><p>See <a href="Dealcloud.Impl.Data.View.html#post/4"><code class="inline">Dealcloud.Impl.Data.View.post/4</code></a>.</p></div>
+          <div class="summary-synopsis"><p>Get the records belonging to a view. If supply value later is enabled, this allows you to override the filter</p></div>
 
       </div>
 
@@ -144,7 +200,8 @@ dealcloud
 
         </div>
 
-          <div class="summary-synopsis"><p>See <a href="Dealcloud.Impl.Data.Merge.html#post/3"><code class="inline">Dealcloud.Impl.Data.Merge.post/3</code></a>.</p></div>
+          <div class="summary-synopsis"><p>This contains the functions for merging 2 or more entries.
+You're able to perform up to 100 mergest per call</p></div>
 
       </div>
 
@@ -152,6 +209,167 @@ dealcloud
 
   </section>
 
+
+  <section id="types" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#types">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Types
+    </h1>
+    <div class="types-list">
+<section class="detail" id="t:auth/0">
+
+  <div class="detail-header">
+    <a href="#t:auth/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">auth()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">auth() :: %Dealcloud.Auth{
+  access_token: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  client_id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  client_secret: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  data_url: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  expires_in: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  refresh_token: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  schema_url: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  site: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  token_type: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  token_url: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  user_url: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
+}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:history_query/0">
+
+  <div class="detail-header">
+    <a href="#t:history_query/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">history_query()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">history_query() :: %Dealcloud.Data.HistoryQuery{
+  entries: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  entryTypeId: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  fields: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  fromDate: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
+}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:merge_request/0">
+
+  <div class="detail-header">
+    <a href="#t:merge_request/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">merge_request()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">merge_request() :: %Dealcloud.Data.MergeRequest{
+  entryId: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  mergeEntries: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
+}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:query/0">
+
+  <div class="detail-header">
+    <a href="#t:query/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">query()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">query() :: %Dealcloud.Data.Query{
+  isPrivate: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  limit: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  overwriteEmptyValues: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  query: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  resolveReferenceUrls: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  skip: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  wrapIntoArrays: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
+}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:view_filter/0">
+
+  <div class="detail-header">
+    <a href="#t:view_filter/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">view_filter()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">view_filter() :: %Dealcloud.Data.ViewFilter{column: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(), value: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+
+    </div>
+  </section>
 
   <section id="functions" class="details-list">
     <h1 class="section-heading">
@@ -176,24 +394,56 @@ Functions
 
   <section class="docstring">
 
-<p>Historical Data API - Retrives data from in the past</p>
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">get_historical(
+  <a href="#t:history_query/0">history_query</a>(),
+  <a href="#t:auth/0">auth</a>()
+) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+
+      </div>
+
+<p>Historical Data API - Retrives data values from the past. This API can be used to retreive data from deleted entries
+as well as data from fields that have since been updated. We do not keep audits of deleted entries, so for a deleted
+entry this will always return the value at time of deletion.</p><h2 id="get_historical/2-examples" class="section-heading">
+  <a href="#get_historical/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Data</span><span class="o">.</span><span class="n">get_historical</span><span class="p" data-group-id="8587406089-1">(</span><span class="p" data-group-id="8587406089-1">)</span></code></pre>
   </section>
 </section>
-<section class="detail" id="get_view_entries/4">
+<section class="detail" id="get_view_details/4">
 
   <div class="detail-header">
-    <a href="#get_view_entries/4" class="detail-link" title="Link to this function">
+    <a href="#get_view_details/4" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">get_view_entries(viewId, body, query, config)</h1>
+    <h1 class="signature" translate="no">get_view_details(viewId, body, query, config)</h1>
 
 
   </div>
 
   <section class="docstring">
 
-<p>See <a href="Dealcloud.Impl.Data.View.html#post/4"><code class="inline">Dealcloud.Impl.Data.View.post/4</code></a>.</p>
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">get_view_details(
+  <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(),
+  [<a href="#t:view_filter/0">view_filter</a>()],
+  <a href="#t:query/0">query</a>(),
+  <a href="#t:auth/0">auth</a>()
+) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+
+      </div>
+
+<p>Get the records belonging to a view. If supply value later is enabled, this allows you to override the filter</p><h2 id="get_view_details/4-examples" class="section-heading">
+  <a href="#get_view_details/4-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Data</span><span class="o">.</span><span class="n">get_view_details</span><span class="p" data-group-id="7853339941-1">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7853339941-2">[</span><span class="p" data-group-id="7853339941-2">]</span><span class="p">,</span><span class="w"> </span><span class="n">query</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7853339941-3">%</span><span class="nc" data-group-id="7853339941-3">Dealcloud.Auth</span><span class="p" data-group-id="7853339941-3">{</span><span class="p" data-group-id="7853339941-3">}</span><span class="p" data-group-id="7853339941-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="get_views/2">
@@ -209,6 +459,16 @@ Functions
   </div>
 
   <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">get_views(
+  <a href="#t:query/0">query</a>(),
+  <a href="#t:auth/0">auth</a>()
+) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+
+      </div>
 
 <p>View APIs</p>
   </section>
@@ -227,7 +487,21 @@ Functions
 
   <section class="docstring">
 
-<p>See <a href="Dealcloud.Impl.Data.Merge.html#post/3"><code class="inline">Dealcloud.Impl.Data.Merge.post/3</code></a>.</p>
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">merge(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), [<a href="#t:merge_request/0">merge_request</a>()], <a href="#t:auth/0">auth</a>()) :: :ok</pre>
+
+      </div>
+
+<p>This contains the functions for merging 2 or more entries.
+You're able to perform up to 100 mergest per call</p><p>Takes the entryType as a integer
+Take a list of merge Requests
+Takes query params, must specify if it should overrite blank values
+Takes authentication</p><p>##Examples</p><pre><code class="makeup elixir" translate="no"><span class="kn">alias</span><span class="w"> </span><span class="nc">Dealcloud.Impl.Data.Merge</span><span class="w">
+</span><span class="n">mergeRequest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="2850540565-1">%</span><span class="nc" data-group-id="2850540565-1">Dealcloud.Data.Merge</span><span class="p" data-group-id="2850540565-1">{</span><span class="ss">entryId</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">mergeEntries</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2850540565-2">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="2850540565-2">]</span><span class="p" data-group-id="2850540565-1">}</span><span class="w">
+</span><span class="nc">Merge</span><span class="o">.</span><span class="n">post</span><span class="p" data-group-id="2850540565-3">(</span><span class="mi">2014</span><span class="p">,</span><span class="p" data-group-id="2850540565-4">[</span><span class="n">mergeRequest</span><span class="p" data-group-id="2850540565-4">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2850540565-5">%</span><span class="nc" data-group-id="2850540565-5">Dealcloud.Data.Query</span><span class="p" data-group-id="2850540565-5">{</span><span class="ss">overwriteEmptyValues</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="2850540565-5">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2850540565-6">%</span><span class="nc" data-group-id="2850540565-6">Auth</span><span class="p" data-group-id="2850540565-6">{</span><span class="p" data-group-id="2850540565-6">}</span><span class="p" data-group-id="2850540565-3">)</span><span class="w">
+</span><span class="ss">:ok</span></code></pre>
   </section>
 </section>
 

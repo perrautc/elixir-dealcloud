@@ -29,9 +29,19 @@ defmodule Dealcloud.Auth do
             refresh_token: nil,
             token_type: "bearer"
 
+  @doc """
+  Generates new token
+  ## Examples
+      Dealcloud.Auth.token(%Dealcloud.Auth{})
+  """
   @spec token(Dealcloud.Auth.t()) :: Dealcloud.Auth.t()
   defdelegate token(config), to: Impl.Auth
 
+  @doc """
+  Refreshes tokens
+  ## Examples
+      Dealcloud.Auth.refresh(%Dealcloud.Auth{})
+  """
   @spec refresh(Dealcloud.Auth.t()) :: Dealcloud.Auth.t()
   defdelegate refresh(config), to: Impl.Auth
 end

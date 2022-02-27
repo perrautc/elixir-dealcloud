@@ -1,4 +1,5 @@
 defmodule Dealcloud.Impl.Data.View do
+  @moduledoc false
   alias Dealcloud.Impl.Data
   @name "view"
   def get(query, config), do: ["rows", @name] |> Data.get(query, config)

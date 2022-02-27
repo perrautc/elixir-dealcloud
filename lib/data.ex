@@ -1,88 +1,78 @@
-defmodule Dealcloud.Data.Cells do
-  ################################################################
-  @moduledoc """
-  These are cell APIs. These APIs use key-value pairs when communicating with the server.
-  Both Requests and Responses are sent as arrays of [{EntryId: 1, FieldId: 1, Value: "Hello"}].
-
-  These APIs are more performant, but may not be the best when working with ETL tools.
-  """
-
-  defdelegate get_keys(entryType, config),
-    to: Dealcloud.Impl.Data.EntryData,
-    as: :get_entries
-
-  defdelegate get_ids(entryType, config),
-    to: Dealcloud.Impl.Data.EntryData,
-    as: :get_entries_ids
-
-  defdelegate get_modified(entryType, params, config),
-    to: Dealcloud.Impl.Data.EntryData,
-    as: :get_modified_entries
-
-  defdelegate get_filtered(entryType, filters, config),
-    to: Dealcloud.Impl.Data.EntryData,
-    as: :filter_entries
-
-  defdelegate get(entries, params, config),
-    to: Dealcloud.Impl.Data.EntryData
-
-  defdelegate get_batch(entries, params, config),
-    to: Dealcloud.Impl.Data.Utility,
-    as: :get
-
-  defdelegate create(type, entries, config),
-    to: Dealcloud.Impl.Data.EntryData,
-    as: :post
-
-  defdelegate update(type, entries, config),
-    to: Dealcloud.Impl.Data.EntryData,
-    as: :put
-
-  defdelegate all_fields(entryType, entryIds, config),
-    to: Dealcloud.Impl.Data.Utility,
-    as: :all_fields
-
-  defdelegate get_all(entryType, config),
-    to: Dealcloud.Impl.Data.Utility,
-    as: :all_entries
-end
-
-defmodule Dealcloud.Data.Rows do
-  @moduledoc """
-  These are Rows APIs, These APIs work using Arrays of Json objects.
-  These APIs are typical of what you see in most other systems. These APIs works better with ETL tools.
-  """
-  defdelegate get_entries(entryTypeId, params, config),
-    to: Dealcloud.Impl.Data.RowData,
-    as: :get
-
-  defdelegate get_as_post(entryTypeId, body, config),
-    to: Dealcloud.Impl.Data.RowData,
-    as: :query
-
-  defdelegate create_entries(entryTypeId, body, config),
-    to: Dealcloud.Impl.Data.RowData,
-    as: :post
-
-  defdelegate update_entries(entryTypeId, body, config),
-    to: Dealcloud.Impl.Data.RowData,
-    as: :patch
-end
-
 defmodule Dealcloud.Data do
-  @doc """
-  Historical Data API - Retrives data from in the past
+  @type auth :: %Dealcloud.Auth{}
+  @type query :: %Dealcloud.Data.Query{}
+  @type history_query :: %Dealcloud.Data.HistoryQuery{}
+  @type merge_request :: %Dealcloud.Data.MergeRequest{}
+  @type view_filter :: %Dealcloud.Data.ViewFilter{}
+  @moduledoc """
+  The Data APIs are used to minipulate records in the site.
+
+  These are the APIs that can be used to perform the following acitons:
+  1. Create Entries
+  2. Update Entries
+  3. Query Entries
+  4. Read Entries
+  5. Delete Entries
+
+  Some of these APIs work with information on a Cells level. These APIs have been grouped under Cells, and
+  they accept inputs are Key-Value, and return responses in the same manner.
+  The cells APIs have a direct equivalent that are marked as rows. These APIs works with entries as a object.
+  Depending on the tooling you're using one of these paradaims may be more beneficial then the other.
   """
+
+  @doc """
+  Historical Data API - Retrives data values from the past. This API can be used to retreive data from deleted entries
+  as well as data from fields that have since been updated. We do not keep audits of deleted entries, so for a deleted
+  entry this will always return the value at time of deletion.
+
+  ## Examples
+      Dealcloud.Data.get_historical()
+  """
+  @spec get_historical(
+          history_query(),
+          auth()
+        ) :: any
   defdelegate get_historical(body, config), to: Dealcloud.Impl.Data.History, as: :get
 
   @doc """
   View APIs
   """
+  @spec get_views(
+          query(),
+          auth()
+        ) :: any
   defdelegate get_views(query, config), to: Dealcloud.Impl.Data.View, as: :get
 
-  defdelegate get_view_entries(viewId, body, query, config),
+  @doc """
+  Get the records belonging to a view. If supply value later is enabled, this allows you to override the filter
+  ## Examples
+      Dealcloud.Data.get_view_details(1, [], query, %Dealcloud.Auth{})
+  """
+  @spec get_view_details(
+          integer,
+          list(view_filter()),
+          query(),
+          auth()
+        ) :: any
+  defdelegate get_view_details(viewId, body, query, config),
     to: Dealcloud.Impl.Data.View,
     as: :post
 
+  @doc """
+  This contains the functions for merging 2 or more entries.
+  You're able to perform up to 100 mergest per call
+
+  Takes the entryType as a integer
+  Take a list of merge Requests
+  Takes query params, must specify if it should overrite blank values
+  Takes authentication
+
+  ##Examples
+      alias Dealcloud.Impl.Data.Merge
+      mergeRequest = %Dealcloud.Data.Merge{entryId: 1, mergeEntries: [1, 2, 3]}
+      Merge.post(2014,[mergeRequest], %Dealcloud.Data.Query{overwriteEmptyValues: true}, %Auth{})
+      :ok
+  """
+  @spec merge(integer, list(merge_request()), auth()) :: :ok
   defdelegate merge(type, mergeRequest, config), to: Dealcloud.Impl.Data.Merge, as: :post
 end
