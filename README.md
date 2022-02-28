@@ -1,7 +1,7 @@
 # Dealcloud
 
-**TODO: Add description**
-
+## Description
+Fast SDK for DealCloud's API written in pure Elixir
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
@@ -10,7 +10,7 @@ by adding `dealcloud` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:dealcloud, "~> 0.2.0"}
+    {:dealcloud, "~> 0.3.0"}
   ]
 end
 ```
