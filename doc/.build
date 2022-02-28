@@ -7,6 +7,7 @@ Dealcloud.Management.html
 Dealcloud.Schema.html
 Dealcloud.html
 api-reference.html
+changelog.html
 dist/app-80aa23c1d96b6dc3c064.js
 dist/elixir-a816d167216329cc463d.css
 dist/html/fonts/remixicon.eot
@@ -14,7 +15,8 @@ dist/html/fonts/remixicon.svg
 dist/html/fonts/remixicon.ttf
 dist/html/fonts/remixicon.woff
 dist/html/fonts/remixicon.woff2
-dist/search_items-4d5888dacc.js
-dist/sidebar_items-8259ec7dff.js
+dist/search_items-e4db7d1db7.js
+dist/sidebar_items-8e61ef3c54.js
 index.html
+readme.html
 search.html
