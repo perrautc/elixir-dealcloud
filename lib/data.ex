@@ -28,10 +28,7 @@ defmodule Dealcloud.Data do
   ## Examples
       Dealcloud.Data.get_historical()
   """
-  @spec get_historical(
-          history_query(),
-          auth()
-        ) :: any
+  @spec get_historical(history_query(),auth()) :: any
   defdelegate get_historical(body, config), to: Dealcloud.Impl.Data.History, as: :get
 
   @doc """

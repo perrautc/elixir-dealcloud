@@ -1,5 +1,13 @@
 defmodule Dealcloud.Data.Record do
   @moduledoc false
+  @type t :: %__MODULE__{
+    entryId: integer,
+    fieldId: integer,
+    currencyCode: String.t(),
+    rowId: integer,
+    value: any,
+    ignoreNearDups: boolean
+  }
   defstruct entryId: 0,
             fieldId: 0,
             currencyCode: nil,

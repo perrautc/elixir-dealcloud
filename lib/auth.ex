@@ -15,6 +15,7 @@ defmodule Dealcloud.Auth do
           access_token: String.t(),
           expires_in: integer,
           refresh_token: String.t(),
+          marketing_url: String.t(),
           token_type: String.t()
         }
   defstruct site: nil,
@@ -24,6 +25,7 @@ defmodule Dealcloud.Auth do
             data_url: "api/rest/v4/data",
             schema_url: "api/rest/v4/schema",
             user_url: "api/rest/v1/management",
+            marketing_url: "api/v1/emarketing",
             access_token: nil,
             expires_in: nil,
             refresh_token: nil,
