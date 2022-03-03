@@ -4,6 +4,9 @@ Dealcloud.Data.Cells.html
 Dealcloud.Data.Rows.html
 Dealcloud.Data.html
 Dealcloud.Management.html
+Dealcloud.Marketing.Activity.html
+Dealcloud.Marketing.Query.html
+Dealcloud.Marketing.html
 Dealcloud.Schema.html
 Dealcloud.html
 api-reference.html
@@ -15,8 +18,8 @@ dist/html/fonts/remixicon.svg
 dist/html/fonts/remixicon.ttf
 dist/html/fonts/remixicon.woff
 dist/html/fonts/remixicon.woff2
-dist/search_items-e4db7d1db7.js
-dist/sidebar_items-8e61ef3c54.js
+dist/search_items-1bb346902e.js
+dist/sidebar_items-01f0a46b4f.js
 index.html
 readme.html
 search.html

@@ -5,14 +5,14 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.28.0">
-    <meta name="project" content="dealcloud v0.3.0">
+    <meta name="project" content="dealcloud v0.4.0">
 
-    <title>Dealcloud.Data.Rows — dealcloud v0.3.0</title>
+    <title>Dealcloud.Data.Rows — dealcloud v0.4.0</title>
     <link rel="stylesheet" href="dist/elixir-a816d167216329cc463d.css" />
 
       <link rel="canonical" href="http://hexdocs.pm/dealcloud/Dealcloud.Data.Rows.html" />
 
-    <script src="dist/sidebar_items-8e61ef3c54.js"></script>
+    <script src="dist/sidebar_items-01f0a46b4f.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -62,7 +62,7 @@
 dealcloud
       </a>
       <strong class="sidebar-projectVersion" translate="no">
-        v0.3.0
+        v0.4.0
       </strong>
     </div>
     <ul class="sidebar-listNav">
@@ -89,13 +89,13 @@ dealcloud
 </button>
 
 
-    <a href="https://github.com/perrautc/elixir-dealcloud/blob/v0.3.0/lib/data/rows.ex#L1" title="View Source" class="view-source" rel="help">
+    <a href="https://github.com/perrautc/elixir-dealcloud/blob/v0.4.0/lib/data/rows.ex#L1" title="View Source" class="view-source" rel="help">
       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
       <span class="sr-only">View Source</span>
     </a>
 
   <span translate="no">Dealcloud.Data.Rows</span> 
-  <small class="app-vsn" translate="no">(dealcloud v0.3.0)</small>
+  <small class="app-vsn" translate="no">(dealcloud v0.4.0)</small>
 
 </h1>
 
@@ -122,11 +122,21 @@ These APIs are typical of what you see in most other systems. These APIs works b
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#create_entries/3" translate="no">create_entries(entryTypeId, body, config)</a>
+          <a href="#create/3" translate="no">create(entryTypeId, body, config)</a>
 
         </div>
 
           <div class="summary-synopsis"><p>Creates new entries in the site. EntryId must be negative integer</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#get/3" translate="no">get(entryTypeId, params, config)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Gets entries in the site using either the id or api name</p></div>
 
       </div>
 
@@ -142,17 +152,7 @@ These APIs are typical of what you see in most other systems. These APIs works b
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#get_entries/3" translate="no">get_entries(entryTypeId, params, config)</a>
-
-        </div>
-
-          <div class="summary-synopsis"><p>Gets entries in the site using either the id or api name</p></div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#update_entries/3" translate="no">update_entries(entryTypeId, body, config)</a>
+          <a href="#update/3" translate="no">update(entryTypeId, body, config)</a>
 
         </div>
 
@@ -174,16 +174,16 @@ These APIs are typical of what you see in most other systems. These APIs works b
 Functions
     </h1>
     <div class="functions-list">
-<section class="detail" id="create_entries/3">
+<section class="detail" id="create/3">
 
   <div class="detail-header">
-    <a href="#create_entries/3" class="detail-link" title="Link to this function">
+    <a href="#create/3" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">create_entries(entryTypeId, body, config)</h1>
+    <h1 class="signature" translate="no">create(entryTypeId, body, config)</h1>
 
-      <a href="https://github.com/perrautc/elixir-dealcloud/blob/v0.3.0/lib/data/rows.ex#L38" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/perrautc/elixir-dealcloud/blob/v0.4.0/lib/data/rows.ex#L38" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -196,16 +196,50 @@ Functions
       <h2>Specs</h2>
       <div class="specs">
 
-          <pre translate="no">create_entries(<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), [<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()], Dealcloud.Auth) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+          <pre translate="no">create(<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), [<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()], Dealcloud.Auth) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
 
       </div>
 
-<p>Creates new entries in the site. EntryId must be negative integer</p><h2 id="create_entries/3-examples" class="section-heading">
-  <a href="#create_entries/3-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+<p>Creates new entries in the site. EntryId must be negative integer</p><h2 id="create/3-examples" class="section-heading">
+  <a href="#create/3-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
   Examples
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Data.Rows</span><span class="o">.</span><span class="n">create_entries</span><span class="p" data-group-id="2028260593-1">(</span><span class="mi">2011</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2028260593-2">[</span><span class="p" data-group-id="2028260593-3">{</span><span class="s">&quot;EntryId&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Name&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p" data-group-id="2028260593-3">}</span><span class="p" data-group-id="2028260593-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2028260593-4">%</span><span class="nc" data-group-id="2028260593-4">Dealcloud.Auth</span><span class="p" data-group-id="2028260593-4">{</span><span class="p" data-group-id="2028260593-4">}</span><span class="p" data-group-id="2028260593-1">)</span><span class="w">
-</span><span class="nc">Dealcloud.Data.Rows</span><span class="o">.</span><span class="n">create_entries</span><span class="p" data-group-id="2028260593-5">(</span><span class="s">&quot;company&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2028260593-6">[</span><span class="p" data-group-id="2028260593-7">{</span><span class="s">&quot;EntryId&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Name&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p" data-group-id="2028260593-7">}</span><span class="p" data-group-id="2028260593-6">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2028260593-8">%</span><span class="nc" data-group-id="2028260593-8">Dealcloud.Auth</span><span class="p" data-group-id="2028260593-8">{</span><span class="p" data-group-id="2028260593-8">}</span><span class="p" data-group-id="2028260593-5">)</span></code></pre>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Data.Rows</span><span class="o">.</span><span class="n">create</span><span class="p" data-group-id="6830876689-1">(</span><span class="mi">2011</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6830876689-2">[</span><span class="p" data-group-id="6830876689-3">{</span><span class="s">&quot;EntryId&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Name&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p" data-group-id="6830876689-3">}</span><span class="p" data-group-id="6830876689-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6830876689-4">%</span><span class="nc" data-group-id="6830876689-4">Dealcloud.Auth</span><span class="p" data-group-id="6830876689-4">{</span><span class="p" data-group-id="6830876689-4">}</span><span class="p" data-group-id="6830876689-1">)</span><span class="w">
+</span><span class="nc">Dealcloud.Data.Rows</span><span class="o">.</span><span class="n">create</span><span class="p" data-group-id="6830876689-5">(</span><span class="s">&quot;company&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6830876689-6">[</span><span class="p" data-group-id="6830876689-7">{</span><span class="s">&quot;EntryId&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Name&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p" data-group-id="6830876689-7">}</span><span class="p" data-group-id="6830876689-6">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6830876689-8">%</span><span class="nc" data-group-id="6830876689-8">Dealcloud.Auth</span><span class="p" data-group-id="6830876689-8">{</span><span class="p" data-group-id="6830876689-8">}</span><span class="p" data-group-id="6830876689-5">)</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="get/3">
+
+  <div class="detail-header">
+    <a href="#get/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get(entryTypeId, params, config)</h1>
+
+      <a href="https://github.com/perrautc/elixir-dealcloud/blob/v0.4.0/lib/data/rows.ex#L14" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">get(<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), Dealcloud.Data.Query, Dealcloud.Auth) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+
+      </div>
+
+<p>Gets entries in the site using either the id or api name</p><h2 id="get/3-examples" class="section-heading">
+  <a href="#get/3-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Data.Rows</span><span class="o">.</span><span class="n">get</span><span class="p" data-group-id="3128041376-1">(</span><span class="mi">2011</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3128041376-2">%</span><span class="nc" data-group-id="3128041376-2">Dealcloud.Data.Query</span><span class="p" data-group-id="3128041376-2">{</span><span class="p" data-group-id="3128041376-2">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3128041376-3">%</span><span class="nc" data-group-id="3128041376-3">Dealcloud.Auth</span><span class="p" data-group-id="3128041376-3">{</span><span class="p" data-group-id="3128041376-3">}</span><span class="p" data-group-id="3128041376-1">)</span><span class="w">
+</span><span class="nc">Dealcloud.Data.Rows</span><span class="o">.</span><span class="n">get</span><span class="p" data-group-id="3128041376-4">(</span><span class="s">&quot;company&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3128041376-5">%</span><span class="nc" data-group-id="3128041376-5">Dealcloud.Data.Query</span><span class="p" data-group-id="3128041376-5">{</span><span class="p" data-group-id="3128041376-5">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3128041376-6">%</span><span class="nc" data-group-id="3128041376-6">Dealcloud.Auth</span><span class="p" data-group-id="3128041376-6">{</span><span class="p" data-group-id="3128041376-6">}</span><span class="p" data-group-id="3128041376-4">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="get_as_post/3">
@@ -217,7 +251,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">get_as_post(entryTypeId, body, config)</h1>
 
-      <a href="https://github.com/perrautc/elixir-dealcloud/blob/v0.3.0/lib/data/rows.ex#L26" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/perrautc/elixir-dealcloud/blob/v0.4.0/lib/data/rows.ex#L26" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -239,20 +273,20 @@ Functions
   <a href="#get_as_post/3-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
   Examples
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Data.Rows</span><span class="o">.</span><span class="n">get_as_post</span><span class="p" data-group-id="8279931883-1">(</span><span class="mi">2011</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8279931883-2">%</span><span class="nc" data-group-id="8279931883-2">Dealcloud.Data.PostQuery</span><span class="p" data-group-id="8279931883-2">{</span><span class="p" data-group-id="8279931883-2">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8279931883-3">%</span><span class="nc" data-group-id="8279931883-3">Dealcloud.Auth</span><span class="p" data-group-id="8279931883-3">{</span><span class="p" data-group-id="8279931883-3">}</span><span class="p" data-group-id="8279931883-1">)</span><span class="w">
-</span><span class="nc">Dealcloud.Data.Rows</span><span class="o">.</span><span class="n">get_as_post</span><span class="p" data-group-id="8279931883-4">(</span><span class="s">&quot;company&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8279931883-5">%</span><span class="nc" data-group-id="8279931883-5">Dealcloud.Data.PostQuery</span><span class="p" data-group-id="8279931883-5">{</span><span class="p" data-group-id="8279931883-5">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8279931883-6">%</span><span class="nc" data-group-id="8279931883-6">Dealcloud.Auth</span><span class="p" data-group-id="8279931883-6">{</span><span class="p" data-group-id="8279931883-6">}</span><span class="p" data-group-id="8279931883-4">)</span></code></pre>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Data.Rows</span><span class="o">.</span><span class="n">get_as_post</span><span class="p" data-group-id="0687423132-1">(</span><span class="mi">2011</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0687423132-2">%</span><span class="nc" data-group-id="0687423132-2">Dealcloud.Data.PostQuery</span><span class="p" data-group-id="0687423132-2">{</span><span class="p" data-group-id="0687423132-2">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0687423132-3">%</span><span class="nc" data-group-id="0687423132-3">Dealcloud.Auth</span><span class="p" data-group-id="0687423132-3">{</span><span class="p" data-group-id="0687423132-3">}</span><span class="p" data-group-id="0687423132-1">)</span><span class="w">
+</span><span class="nc">Dealcloud.Data.Rows</span><span class="o">.</span><span class="n">get_as_post</span><span class="p" data-group-id="0687423132-4">(</span><span class="s">&quot;company&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0687423132-5">%</span><span class="nc" data-group-id="0687423132-5">Dealcloud.Data.PostQuery</span><span class="p" data-group-id="0687423132-5">{</span><span class="p" data-group-id="0687423132-5">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0687423132-6">%</span><span class="nc" data-group-id="0687423132-6">Dealcloud.Auth</span><span class="p" data-group-id="0687423132-6">{</span><span class="p" data-group-id="0687423132-6">}</span><span class="p" data-group-id="0687423132-4">)</span></code></pre>
   </section>
 </section>
-<section class="detail" id="get_entries/3">
+<section class="detail" id="update/3">
 
   <div class="detail-header">
-    <a href="#get_entries/3" class="detail-link" title="Link to this function">
+    <a href="#update/3" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">get_entries(entryTypeId, params, config)</h1>
+    <h1 class="signature" translate="no">update(entryTypeId, body, config)</h1>
 
-      <a href="https://github.com/perrautc/elixir-dealcloud/blob/v0.3.0/lib/data/rows.ex#L14" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/perrautc/elixir-dealcloud/blob/v0.4.0/lib/data/rows.ex#L50" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -265,50 +299,16 @@ Functions
       <h2>Specs</h2>
       <div class="specs">
 
-          <pre translate="no">get_entries(<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), Dealcloud.Data.Query, Dealcloud.Auth) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+          <pre translate="no">update(<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), [<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()], Dealcloud.Auth) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
 
       </div>
 
-<p>Gets entries in the site using either the id or api name</p><h2 id="get_entries/3-examples" class="section-heading">
-  <a href="#get_entries/3-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
+<p>Updates existing entries in the site. EntryId must be positive integer</p><h2 id="update/3-examples" class="section-heading">
+  <a href="#update/3-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
   Examples
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Data.Rows</span><span class="o">.</span><span class="n">get_entries</span><span class="p" data-group-id="2443599968-1">(</span><span class="mi">2011</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2443599968-2">%</span><span class="nc" data-group-id="2443599968-2">Dealcloud.Data.Query</span><span class="p" data-group-id="2443599968-2">{</span><span class="p" data-group-id="2443599968-2">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2443599968-3">%</span><span class="nc" data-group-id="2443599968-3">Dealcloud.Auth</span><span class="p" data-group-id="2443599968-3">{</span><span class="p" data-group-id="2443599968-3">}</span><span class="p" data-group-id="2443599968-1">)</span><span class="w">
-</span><span class="nc">Dealcloud.Data.Rows</span><span class="o">.</span><span class="n">get_entries</span><span class="p" data-group-id="2443599968-4">(</span><span class="s">&quot;company&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2443599968-5">%</span><span class="nc" data-group-id="2443599968-5">Dealcloud.Data.Query</span><span class="p" data-group-id="2443599968-5">{</span><span class="p" data-group-id="2443599968-5">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2443599968-6">%</span><span class="nc" data-group-id="2443599968-6">Dealcloud.Auth</span><span class="p" data-group-id="2443599968-6">{</span><span class="p" data-group-id="2443599968-6">}</span><span class="p" data-group-id="2443599968-4">)</span></code></pre>
-  </section>
-</section>
-<section class="detail" id="update_entries/3">
-
-  <div class="detail-header">
-    <a href="#update_entries/3" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">update_entries(entryTypeId, body, config)</h1>
-
-      <a href="https://github.com/perrautc/elixir-dealcloud/blob/v0.3.0/lib/data/rows.ex#L50" class="view-source" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <h2>Specs</h2>
-      <div class="specs">
-
-          <pre translate="no">update_entries(<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), [<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()], Dealcloud.Auth) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
-
-      </div>
-
-<p>Updates existing entries in the site. EntryId must be positive integer</p><h2 id="update_entries/3-examples" class="section-heading">
-  <a href="#update_entries/3-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a>
-  Examples
-</h2>
-<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Data.Rows</span><span class="o">.</span><span class="n">update_entries</span><span class="p" data-group-id="4085921790-1">(</span><span class="mi">2011</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4085921790-2">[</span><span class="p" data-group-id="4085921790-3">{</span><span class="s">&quot;EntryId&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Name&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p" data-group-id="4085921790-3">}</span><span class="p" data-group-id="4085921790-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4085921790-4">%</span><span class="nc" data-group-id="4085921790-4">Dealcloud.Auth</span><span class="p" data-group-id="4085921790-4">{</span><span class="p" data-group-id="4085921790-4">}</span><span class="p" data-group-id="4085921790-1">)</span><span class="w">
-</span><span class="nc">Dealcloud.Data.Rows</span><span class="o">.</span><span class="n">update_entries</span><span class="p" data-group-id="4085921790-5">(</span><span class="s">&quot;company&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4085921790-6">[</span><span class="p" data-group-id="4085921790-7">{</span><span class="s">&quot;EntryId&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Name&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p" data-group-id="4085921790-7">}</span><span class="p" data-group-id="4085921790-6">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4085921790-8">%</span><span class="nc" data-group-id="4085921790-8">Dealcloud.Auth</span><span class="p" data-group-id="4085921790-8">{</span><span class="p" data-group-id="4085921790-8">}</span><span class="p" data-group-id="4085921790-5">)</span></code></pre>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Dealcloud.Data.Rows</span><span class="o">.</span><span class="n">update</span><span class="p" data-group-id="6990007558-1">(</span><span class="mi">2011</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6990007558-2">[</span><span class="p" data-group-id="6990007558-3">{</span><span class="s">&quot;EntryId&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Name&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p" data-group-id="6990007558-3">}</span><span class="p" data-group-id="6990007558-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6990007558-4">%</span><span class="nc" data-group-id="6990007558-4">Dealcloud.Auth</span><span class="p" data-group-id="6990007558-4">{</span><span class="p" data-group-id="6990007558-4">}</span><span class="p" data-group-id="6990007558-1">)</span><span class="w">
+</span><span class="nc">Dealcloud.Data.Rows</span><span class="o">.</span><span class="n">update</span><span class="p" data-group-id="6990007558-5">(</span><span class="s">&quot;company&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6990007558-6">[</span><span class="p" data-group-id="6990007558-7">{</span><span class="s">&quot;EntryId&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Name&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p" data-group-id="6990007558-7">}</span><span class="p" data-group-id="6990007558-6">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6990007558-8">%</span><span class="nc" data-group-id="6990007558-8">Dealcloud.Auth</span><span class="p" data-group-id="6990007558-8">{</span><span class="p" data-group-id="6990007558-8">}</span><span class="p" data-group-id="6990007558-5">)</span></code></pre>
   </section>
 </section>
 
@@ -321,10 +321,10 @@ Functions
             On Hex.pm:
 
             <span class="line">
-              <a href="https://hex.pm/packages/dealcloud/0.3.0" class="line footer-hex-package">Package</a>
-              <a href="https://preview.hex.pm/preview/dealcloud/0.3.0" class="line">Preview</a>
+              <a href="https://hex.pm/packages/dealcloud/0.4.0" class="line footer-hex-package">Package</a>
+              <a href="https://preview.hex.pm/preview/dealcloud/0.4.0" class="line">Preview</a>
 
-                <a href="https://preview.hex.pm/preview/dealcloud/0.3.0/show/lib/data/rows.ex">(current file)</a>
+                <a href="https://preview.hex.pm/preview/dealcloud/0.4.0/show/lib/data/rows.ex">(current file)</a>
 
             </span>
 

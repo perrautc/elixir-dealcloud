@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.28.0">
+    <meta name="project" content="dealcloud v0.4.0">
+
+    <title>Dealcloud.Marketing — dealcloud v0.4.0</title>
+    <link rel="stylesheet" href="dist/elixir-a816d167216329cc463d.css" />
+
+      <link rel="canonical" href="http://hexdocs.pm/dealcloud/Dealcloud.Marketing.html" />
+
+    <script src="dist/sidebar_items-01f0a46b4f.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-80aa23c1d96b6dc3c064.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>
+
+      try {
+        if (localStorage.getItem('night-mode') === 'true') {
+          document.body.classList.add('night-mode');
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+
+<section class="sidebar">
+  <button class="sidebar-button sidebar-toggle">
+    <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+  </button>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+
+    <div class="sidebar-projectDetails">
+      <a href="readme.html" class="sidebar-projectName" translate="no">
+dealcloud
+      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v0.4.0
+      </strong>
+    </div>
+    <ul class="sidebar-listNav">
+      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+    </ul>
+  </div>
+
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+<button class="settings display-settings">
+  <i class="ri-settings-3-line"></i>
+  <span class="sr-only">Settings</span>
+</button>
+
+
+    <a href="https://github.com/perrautc/elixir-dealcloud/blob/v0.4.0/lib/marketing.ex#L1" title="View Source" class="view-source" rel="help">
+      <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+      <span class="sr-only">View Source</span>
+    </a>
+
+  <span translate="no">Dealcloud.Marketing</span> 
+  <small class="app-vsn" translate="no">(dealcloud v0.4.0)</small>
+
+</h1>
+
+
+  <section id="moduledoc">
+<p>The Marketing endpoints capture activities associated with campaigns and web pages</p>
+  </section>
+
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+
+  <div class="summary-types summary">
+    <h2>
+      <a href="#types">Types</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:activity/0" translate="no">activity()</a>
+
+        </div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:query/0" translate="no">query()</a>
+
+        </div>
+
+      </div>
+
+  </div>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#create_activity/2" translate="no">create_activity(params, config)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>See <code class="inline">Dealcloud.Impl.Marketing.Activity.post/2</code>.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#get_activity/2" translate="no">get_activity(params, config)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>See <code class="inline">Dealcloud.Impl.Marketing.Activity.get/2</code>.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#get_page_activity/2" translate="no">get_page_activity(params, config)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>See <code class="inline">Dealcloud.Impl.Marketing.PageViewActivity.get/2</code>.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#update_activity/2" translate="no">update_activity(params, config)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>See <code class="inline">Dealcloud.Impl.Marketing.Activity.patch/2</code>.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#update_page_activity/2" translate="no">update_page_activity(params, config)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>See <code class="inline">Dealcloud.Impl.Marketing.PageViewActivity.patch/2</code>.</p></div>
+
+      </div>
+
+  </div>
+
+  </section>
+
+
+  <section id="types" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#types">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Types
+    </h1>
+    <div class="types-list">
+<section class="detail" id="t:activity/0">
+
+  <div class="detail-header">
+    <a href="#t:activity/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">activity()</h1>
+
+      <a href="https://github.com/perrautc/elixir-dealcloud/blob/v0.4.0/lib/marketing.ex#L4" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">activity() :: %Dealcloud.Marketing.Activity{
+  activityType: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  communicationId: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  description: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  externalEventId: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  externalRecipientId: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  summary: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  timestamp: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
+}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:query/0">
+
+  <div class="detail-header">
+    <a href="#t:query/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">query()</h1>
+
+      <a href="https://github.com/perrautc/elixir-dealcloud/blob/v0.4.0/lib/marketing.ex#L3" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">query() :: %Dealcloud.Marketing.Query{
+  communicationId: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  contactId: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  fields: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
+}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+
+    </div>
+  </section>
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="create_activity/2">
+
+  <div class="detail-header">
+    <a href="#create_activity/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create_activity(params, config)</h1>
+
+      <a href="https://github.com/perrautc/elixir-dealcloud/blob/v0.4.0/lib/marketing.ex#L11" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">create_activity(<a href="Dealcloud.Marketing.Activity.html#t:t/0">Dealcloud.Marketing.Activity.t</a>(), <a href="Dealcloud.Auth.html#t:t/0">Dealcloud.Auth.t</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+
+      </div>
+
+<p>See <code class="inline">Dealcloud.Impl.Marketing.Activity.post/2</code>.</p>
+  </section>
+</section>
+<section class="detail" id="get_activity/2">
+
+  <div class="detail-header">
+    <a href="#get_activity/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_activity(params, config)</h1>
+
+      <a href="https://github.com/perrautc/elixir-dealcloud/blob/v0.4.0/lib/marketing.ex#L9" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">get_activity(<a href="Dealcloud.Marketing.Query.html#t:t/0">Dealcloud.Marketing.Query.t</a>(), <a href="Dealcloud.Auth.html#t:t/0">Dealcloud.Auth.t</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+
+      </div>
+
+<p>See <code class="inline">Dealcloud.Impl.Marketing.Activity.get/2</code>.</p>
+  </section>
+</section>
+<section class="detail" id="get_page_activity/2">
+
+  <div class="detail-header">
+    <a href="#get_page_activity/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_page_activity(params, config)</h1>
+
+      <a href="https://github.com/perrautc/elixir-dealcloud/blob/v0.4.0/lib/marketing.ex#L15" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">get_page_activity(<a href="Dealcloud.Marketing.Query.html#t:t/0">Dealcloud.Marketing.Query.t</a>(), <a href="Dealcloud.Auth.html#t:t/0">Dealcloud.Auth.t</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+
+      </div>
+
+<p>See <code class="inline">Dealcloud.Impl.Marketing.PageViewActivity.get/2</code>.</p>
+  </section>
+</section>
+<section class="detail" id="update_activity/2">
+
+  <div class="detail-header">
+    <a href="#update_activity/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">update_activity(params, config)</h1>
+
+      <a href="https://github.com/perrautc/elixir-dealcloud/blob/v0.4.0/lib/marketing.ex#L13" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">update_activity(<a href="Dealcloud.Marketing.Activity.html#t:t/0">Dealcloud.Marketing.Activity.t</a>(), <a href="Dealcloud.Auth.html#t:t/0">Dealcloud.Auth.t</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+
+      </div>
+
+<p>See <code class="inline">Dealcloud.Impl.Marketing.Activity.patch/2</code>.</p>
+  </section>
+</section>
+<section class="detail" id="update_page_activity/2">
+
+  <div class="detail-header">
+    <a href="#update_page_activity/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">update_page_activity(params, config)</h1>
+
+      <a href="https://github.com/perrautc/elixir-dealcloud/blob/v0.4.0/lib/marketing.ex#L17" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre translate="no">update_page_activity(<a href="Dealcloud.Marketing.Activity.html#t:t/0">Dealcloud.Marketing.Activity.t</a>(), <a href="Dealcloud.Auth.html#t:t/0">Dealcloud.Auth.t</a>()) ::
+  <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+
+      </div>
+
+<p>See <code class="inline">Dealcloud.Impl.Marketing.PageViewActivity.patch/2</code>.</p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+      <footer class="footer">
+
+          <p>
+            On Hex.pm:
+
+            <span class="line">
+              <a href="https://hex.pm/packages/dealcloud/0.4.0" class="line footer-hex-package">Package</a>
+              <a href="https://preview.hex.pm/preview/dealcloud/0.4.0" class="line">Preview</a>
+
+                <a href="https://preview.hex.pm/preview/dealcloud/0.4.0/show/lib/marketing.ex">(current file)</a>
+
+            </span>
+
+            <button class="line footer-button display-quick-switch">
+              Search
+            </button>
+          </p>
+
+        <p>
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.0) for the
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

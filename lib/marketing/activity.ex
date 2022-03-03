@@ -1,4 +1,5 @@
 defmodule Dealcloud.Marketing.Activity do
+  @moduledoc false
   @type t :: %__MODULE__  {
     externalRecipientId: integer,
     externalEventId: String.t(),

@@ -12,10 +12,10 @@ defmodule Dealcloud.Auth do
           data_url: String.t(),
           schema_url: String.t(),
           user_url: String.t(),
+          marketing_url: String.t(),
           access_token: String.t(),
           expires_in: integer,
           refresh_token: String.t(),
-          marketing_url: String.t(),
           token_type: String.t()
         }
   defstruct site: nil,
@@ -36,7 +36,7 @@ defmodule Dealcloud.Auth do
   ## Examples
       Dealcloud.Auth.token(%Dealcloud.Auth{})
   """
-  @spec token(Dealcloud.Auth.t()) :: Dealcloud.Auth.t()
+  @spec token(t) :: t
   defdelegate token(config), to: Impl.Auth
 
   @doc """
@@ -44,6 +44,6 @@ defmodule Dealcloud.Auth do
   ## Examples
       Dealcloud.Auth.refresh(%Dealcloud.Auth{})
   """
-  @spec refresh(Dealcloud.Auth.t()) :: Dealcloud.Auth.t()
+  @spec refresh(t) :: t
   defdelegate refresh(config), to: Impl.Auth
 end
