@@ -7,7 +7,7 @@ defmodule Dealcloud.Impl.Data.Utility do
     entries
     |> create_batches()
     |> Enum.map(fn v ->
-      v |> EntryData.get(params, config)
+      v |> EntryData.get(params, config) |> cleaner
     end)
     |> Enum.reduce([], fn x, acc -> acc ++ x end)
     |> Enum.group_by(fn x -> x.entryId end)
@@ -17,7 +17,7 @@ defmodule Dealcloud.Impl.Data.Utility do
   def put(entryTypeId, entries, config) do
     entries
     |> create_new_batches()
-    |> Enum.map(fn v -> EntryData.put(entryTypeId, v, config) end)
+    |> Enum.map(fn v -> EntryData.put(entryTypeId, v, config) |> cleaner end)
     |> Enum.reduce([], fn x, acc -> acc ++ x end)
     |> Enum.group_by(fn x -> x.entryId end)
   end
@@ -26,7 +26,7 @@ defmodule Dealcloud.Impl.Data.Utility do
   def post(entryTypeId, entries, config) do
     entries
     |> create_batches()
-    |> Enum.map(fn v -> EntryData.post(entryTypeId, v, config) end)
+    |> Enum.map(fn v -> EntryData.post(entryTypeId, v, config) |> cleaner end)
     |> Enum.reduce([], fn x, acc -> acc ++ x end)
     |> Enum.group_by(fn x -> x.entryId end)
   end
@@ -42,6 +42,7 @@ defmodule Dealcloud.Impl.Data.Utility do
   def all_fields(entryType, entryIds, config) do
     fieldIds =
       Dealcloud.Impl.Schema.EntryTypes.fields(entryType, config)
+      |> cleaner
       |> Enum.map(fn x -> x["id"] end)
 
     generate_entries_fields(entryIds, fieldIds)
@@ -51,19 +52,28 @@ defmodule Dealcloud.Impl.Data.Utility do
   def all_entries(entryType, config) do
     entryIds =
       Dealcloud.Impl.Data.EntryData.get_entries(entryType, config)
+      |> cleaner
       |> Enum.map(fn x -> x["id"] end)
+
+
 
     fieldIds =
       Dealcloud.Impl.Schema.EntryTypes.fields(entryType, config)
+      |> cleaner
       |> Enum.map(fn x -> x["id"] end)
 
     generate_entries_fields(entryIds, fieldIds)
   end
 
-  @spec all_entries(integer, any, Dealcloud.Auth.t()) :: list(Dealcloud.Data.Record)
+  def cleaner({:ok, response}) do
+    response
+  end
+
+  @spec all_entries(integer, list(integer), Dealcloud.Auth.t()) :: list(Dealcloud.Data.Record)
   def all_entries(entryType, fieldIds, config) do
     entryIds =
       Dealcloud.Impl.Data.EntryData.get_entries(entryType, config)
+      |> cleaner
       |> Enum.map(fn %{"id" => x} -> x end)
 
     generate_entries_fields(entryIds, fieldIds)
