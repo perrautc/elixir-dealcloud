@@ -34,18 +34,17 @@ defmodule Dealcloud.Impl.Auth do
     url = "#{config.site}/#{config.token_url}"
 
     {:ok, r} =
-      HTTPoison.request(:post, url, URI.encode_query(body), %{
-        "Content-Type" => "application/x-www-form-urlencoded"
-      })
+      Req.request(:post, url, body: URI.encode_query(body), headers: [
+        Content_Type: "application/x-www-form-urlencoded"
+      ])
 
     r |> process_status_code(config)
   end
 
-  defp process_status_code(response = %{body: body, status_code: status_code}, config) do
+  defp process_status_code(response = %{body: body, status: status_code}, config) do
     case status_code do
       200 ->
         body
-        |> Poison.decode!()
         |> config(config)
 
       500 ->

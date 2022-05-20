@@ -4,7 +4,15 @@ defmodule Dealcloud.Impl.Data.EntryData do
   @moduledoc false
 
   @spec get_entries(integer, Dealcloud.Auth.t()) :: any
-  def get_entries(entryType, config), do: [@name, entryType, "entries"] |> Data.get(%{}, config)
+  def get_entries(entryType, config) do
+    entries = [@name, entryType, "entries"] |> Data.get(%{}, config)
+      if is_list(entries) do
+        {:ok, entries}
+      else
+        {:error, entries}
+      end
+
+  end
 
   def get_entries_ids(entryType, config) do
     response = get_entries(entryType, config)

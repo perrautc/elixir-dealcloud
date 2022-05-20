@@ -59,11 +59,11 @@ defmodule Dealcloud.Impl do
         },
         dataProcessor \\ &process_data/2
       ) do
-    case HTTPoison.request(
+    case Req.request(
            requestType,
            url,
-           JSON.encode!(body),
-           headers(config),
+           body: body,
+           headers: headers(config),
            params: to_params(params)
          ) do
       {:ok, response} ->
@@ -75,9 +75,9 @@ defmodule Dealcloud.Impl do
   end
 
   defp process_status_code(response, %{config: config} = p, dataProcessor) do
-    case response.status_code do
+    case response.status do
       200 ->
-        response.body |> Poison.decode!() |> dataProcessor.(p)
+        response.body |> dataProcessor.(p)
 
       204 ->
         :ok

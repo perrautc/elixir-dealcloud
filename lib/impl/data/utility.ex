@@ -7,7 +7,7 @@ defmodule Dealcloud.Impl.Data.Utility do
     entries
     |> create_batches()
     |> Enum.map(fn v ->
-      v |> EntryData.get(params, config) |> cleaner
+      v |> EntryData.get(params, config)
     end)
     |> Enum.reduce([], fn x, acc -> acc ++ x end)
     |> Enum.group_by(fn x -> x.entryId end)
