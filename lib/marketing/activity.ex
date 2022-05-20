@@ -9,6 +9,7 @@ defmodule Dealcloud.Marketing.Activity do
     timestamp: Date.t(),
     summary: String.t()
   }
+  @derive Jason.Encoder
   defstruct externalRecipientId: nil,
     externalEventId: nil,
     communicationId: nil,

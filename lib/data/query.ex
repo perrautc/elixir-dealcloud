@@ -9,6 +9,7 @@ defmodule Dealcloud.Data.Query do
     overwriteEmptyValues: boolean,
     isPrivate: boolean
   }
+  @derive Jason.Encoder
   defstruct query: nil,
             limit: 100,
             skip: 0,

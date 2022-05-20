@@ -11,7 +11,7 @@ defmodule DealcloudTest.Schema.AllFieldsTest do
 
   test "request with HTTP 200 response", %{bypass: bypass} do
     Bypass.expect(bypass, fn conn ->
-      conn |> Plug.Conn.send_resp(200, ~s<"[pong, ping]">)
+      conn |> Plug.Conn.send_resp(200, ~s<[pong, ping]>)
     end)
 
     assert {:ok, "[pong, ping]"} = Request.get(%Dealcloud.Auth{site: @site <> "#{bypass.port}"})
@@ -21,7 +21,7 @@ defmodule DealcloudTest.Schema.AllFieldsTest do
     Bypass.expect(bypass, fn conn ->
       assert "GET" == conn.method
       assert "/api/rest/v4/schema/allfields" == conn.request_path
-      conn |> Plug.Conn.send_resp(200, ~s<"[pong, ping]">)
+      conn |> Plug.Conn.send_resp(200, ~s<[pong, ping]>)
     end)
 
     assert {:ok, "[pong, ping]"} = Request.get(%Dealcloud.Auth{site: @site <> "#{bypass.port}"})

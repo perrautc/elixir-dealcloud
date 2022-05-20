@@ -8,6 +8,7 @@ defmodule Dealcloud.Data.PostQuery do
     resolveReferenceUrls: boolean,
     wrapIntoArrays: boolean
   }
+  @derive Jason.Encoder
   defstruct query: nil,
             fields: [],
             limit: 100,

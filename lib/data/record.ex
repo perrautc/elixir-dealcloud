@@ -8,6 +8,7 @@ defmodule Dealcloud.Data.Record do
     value: any,
     ignoreNearDups: boolean
   }
+  @derive Jason.Encoder
   defstruct entryId: 0,
             fieldId: 0,
             currencyCode: nil,

@@ -15,7 +15,7 @@ defmodule DealcloudTest.Management.GroupTest do
       assert "/api/rest/v1/management/user/group/1" ==
                conn.request_path
 
-      conn |> Plug.Conn.send_resp(200, ~s<"pong">)
+      conn |> Plug.Conn.send_resp(200, ~s<pong>)
     end)
 
     assert {:ok, ["pong"]} = Request.get(1, %Dealcloud.Auth{site: @site <> "#{bypass.port}"})

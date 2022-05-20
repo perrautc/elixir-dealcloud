@@ -14,6 +14,7 @@ defmodule Dealcloud.Management.User do
           federationId: String.t(),
           group: list[integer]
         }
+  @derive Jason.Encoder
   defstruct createdDate: nil,
             createdBy: nil,
             modifiedDate: nil,

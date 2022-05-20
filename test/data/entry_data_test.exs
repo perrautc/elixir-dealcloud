@@ -19,10 +19,10 @@ defmodule DealcloudTest.Data.EntryDataTest do
 
   test "request with HTTP 200 response", %{bypass: bypass} do
     Bypass.expect(bypass, fn conn ->
-      conn |> Plug.Conn.send_resp(200, ~s<"[pong, ping]">)
+      conn |> Plug.Conn.send_resp(200, ~s<[pong, ping]>)
     end)
 
-    assert "[pong, ping]" =
+    assert {:error, "[pong, ping]"} =
              Request.get_entries(@entryTypeId, %Auth{site: @site <> "#{bypass.port}"})
   end
 
@@ -30,10 +30,10 @@ defmodule DealcloudTest.Data.EntryDataTest do
     Bypass.expect(bypass, fn conn ->
       assert "GET" == conn.method
       assert "/api/rest/v4/data/entrydata/#{@entryTypeId}/entries" == conn.request_path
-      conn |> Plug.Conn.send_resp(200, ~s<"[pong, ping]">)
+      conn |> Plug.Conn.send_resp(200, ~s<[pong, ping]>)
     end)
 
-    assert "[pong, ping]" =
+    assert {:error, "[pong, ping]"} =
              Request.get_entries(@entryTypeId, %Dealcloud.Auth{site: @site <> "#{bypass.port}"})
   end
 
@@ -79,7 +79,7 @@ defmodule DealcloudTest.Data.EntryDataTest do
       conn |> Plug.Conn.send_resp(200, ~s<[{\"id\": 1}, {\"id\": 2}]>)
     end)
 
-    assert [%{"id" => 1}, %{"id" => 2}] =
+    assert "[{\"id\": 1}, {\"id\": 2}]" =
              Request.get(
                @entries,
                %Dealcloud.Data.Query{},

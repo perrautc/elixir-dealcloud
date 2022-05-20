@@ -13,7 +13,7 @@ defmodule DealcloudTest.Schema.FiltersTest do
     Bypass.expect(bypass, fn conn ->
       assert "GET" == conn.method
       assert "/api/rest/v4/schema/filteroperations" == conn.request_path
-      conn |> Plug.Conn.send_resp(200, ~s<"[pong, ping]">)
+      conn |> Plug.Conn.send_resp(200, ~s<[pong, ping]>)
     end)
 
     assert {:ok, "[pong, ping]"} = Request.get(%Dealcloud.Auth{site: @site <> "#{bypass.port}"})

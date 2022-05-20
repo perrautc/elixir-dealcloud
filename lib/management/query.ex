@@ -7,6 +7,7 @@ defmodule Dealcloud.Management.Query do
           pageSize: integer,
           isBillable: boolean
         }
+  @derive Jason.Encoder
   defstruct modifiedSince: nil,
             email: nil,
             pageNumber: 1,

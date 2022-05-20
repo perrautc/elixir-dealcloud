@@ -6,5 +6,6 @@ defmodule Dealcloud.Data.HistoryQuery do
     entries: list(integer),
     fromDate: Date.t()
   }
+  @derive Jason.Encoder
   defstruct entryTypeId: 0, fields: [], entries: [], fromDate: nil
 end

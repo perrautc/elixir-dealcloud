@@ -7,5 +7,6 @@ defmodule Dealcloud.Data.MergeRequest do
           entryId: integer,
           mergeEntries: [integer]
         }
+  @derive Jason.Encoder
   defstruct [:entryId, :mergeEntries]
 end

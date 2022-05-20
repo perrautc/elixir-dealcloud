@@ -10,7 +10,7 @@ defmodule DealcloudTest.Schema.UsersTest do
 
   test "request with HTTP 200 response", %{bypass: bypass} do
     Bypass.expect(bypass, fn conn ->
-      conn |> Plug.Conn.send_resp(200, ~s<"[pong, ping]">)
+      conn |> Plug.Conn.send_resp(200, ~s<[pong, ping]>)
     end)
 
     assert {:ok, "[pong, ping]"} = Request.get(%Dealcloud.Auth{site: @site <> "#{bypass.port}"})
@@ -20,7 +20,7 @@ defmodule DealcloudTest.Schema.UsersTest do
     Bypass.expect(bypass, fn conn ->
       assert "GET" == conn.method
       assert "/api/rest/v4/schema/users" == conn.request_path
-      conn |> Plug.Conn.send_resp(200, ~s<"[pong, ping]">)
+      conn |> Plug.Conn.send_resp(200, ~s<[pong, ping]>)
     end)
 
     assert {:ok, "[pong, ping]"} = Request.get(%Dealcloud.Auth{site: @site <> "#{bypass.port}"})
@@ -31,7 +31,7 @@ defmodule DealcloudTest.Schema.UsersTest do
       assert "GET" == conn.method
       assert "/api/rest/v4/schema/users" == conn.request_path
       assert %{"activeOnly" => "true"} == conn.params
-      conn |> Plug.Conn.send_resp(200, ~s<"[pong, ping]">)
+      conn |> Plug.Conn.send_resp(200, ~s<[pong, ping]>)
     end)
 
     assert {:ok, "[pong, ping]"} =
@@ -47,7 +47,7 @@ defmodule DealcloudTest.Schema.UsersTest do
       conn |> Plug.Conn.send_resp(500, ~s<Server Error>)
     end)
 
-    assert {:error, %{status_code: 500, body: "Server Error"}} =
+    assert {:error, %{status: 500, body: "Server Error"}} =
              Request.get(%Dealcloud.Auth{site: @site <> "#{bypass.port}"})
   end
 

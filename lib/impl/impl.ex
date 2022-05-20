@@ -62,7 +62,7 @@ defmodule Dealcloud.Impl do
     case Req.request(
            requestType,
            url,
-           body: body,
+           body: {:json, body},
            headers: headers(config),
            params: to_params(params)
          ) do

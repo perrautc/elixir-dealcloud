@@ -17,7 +17,7 @@ defmodule DealcloudTest.Management.ProxyTest do
       assert "/api/rest/v1/management/user/proxy" ==
                conn.request_path
 
-      conn |> Plug.Conn.send_resp(200, [~s<[]>])
+      conn |> Plug.Conn.send_resp(200, ~s<[]>)
     end)
 
     assert {:ok, []} = Request.get(%Query{}, %Dealcloud.Auth{site: @site <> "#{bypass.port}"})
@@ -30,7 +30,7 @@ defmodule DealcloudTest.Management.ProxyTest do
       assert "/api/rest/v1/management/user/proxy" ==
                conn.request_path
 
-      conn |> Plug.Conn.send_resp(200, [~s<[]>])
+      conn |> Plug.Conn.send_resp(200, ~s<[]>)
     end)
 
     assert {:ok, []} = Request.post([%Body{}], %Dealcloud.Auth{site: @site <> "#{bypass.port}"})

@@ -17,11 +17,11 @@ defmodule DealcloudTest.Management.ActivityTest do
       assert "/api/rest/v1/management/user/activity" ==
                conn.request_path
 
-      conn |> Plug.Conn.send_resp(200, ~s<"[pong, ping]">)
+      conn |> Plug.Conn.send_resp(200, ~s<[pong, ping]>)
     end)
 
     assert {:ok, "[pong, ping]"} =
-             Request.post(%{}, %Dealcloud.Auth{site: @site <> "#{bypass.port}"})
+             Request.post([], %Dealcloud.Auth{site: @site <> "#{bypass.port}"})
   end
 
   test "handles requests with body", %{bypass: bypass} do
@@ -31,11 +31,11 @@ defmodule DealcloudTest.Management.ActivityTest do
       assert "/api/rest/v1/management/user/activity" ==
                conn.request_path
 
-      conn |> Plug.Conn.send_resp(200, ~s<"[pong, ping]">)
+      conn |> Plug.Conn.send_resp(200, ~s<[pong, ping]>)
     end)
 
     assert {:ok, "[pong, ping]"} =
-             Request.post(%Body{activity: 1}, %Dealcloud.Auth{
+             Request.post(%Body{}, %Dealcloud.Auth{
                site: @site <> "#{bypass.port}"
              })
   end
@@ -55,7 +55,7 @@ defmodule DealcloudTest.Management.ActivityTest do
                "pageSize" => "1"
              } == conn.params
 
-      conn |> Plug.Conn.send_resp(200, ~s<"[pong, ping]">)
+      conn |> Plug.Conn.send_resp(200, ~s<[pong, ping]>)
     end)
 
     assert {:ok, "[pong, ping]"} =

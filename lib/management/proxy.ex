@@ -4,5 +4,6 @@ defmodule Dealcloud.Management.Proxy do
           proxyUserId: integer,
           userIds: list(integer)
         }
+  @derive Jason.Encoder
   defstruct userIds: [], proxyUserId: nil
 end

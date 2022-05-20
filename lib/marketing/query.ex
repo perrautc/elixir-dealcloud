@@ -5,5 +5,6 @@ defmodule Dealcloud.Marketing.Query do
     communicationId: integer,
     fields: any
   }
+  @derive Jason.Encoder
   defstruct contactId: 1, communicationId: 2, fields: nil
 end

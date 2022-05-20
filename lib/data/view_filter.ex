@@ -4,5 +4,6 @@ defmodule Dealcloud.Data.ViewFilter do
           column: String.t(),
           value: any
         }
+  @derive Jason.Encoder
   defstruct [:column, :value]
 end
